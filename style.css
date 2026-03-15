@@ -525,6 +525,20 @@ a:visited {
   animation: fadeIn 0.5s ease-out forwards; 
 }
 
+.leftdesign {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  border: #000 1px solid;
+}
+
+.rightdesign {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  border: #000 1px solid;
+}
+
 /*Popup */
 
 /* Fond sombre */
