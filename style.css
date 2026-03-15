@@ -525,19 +525,50 @@ a:visited {
   animation: fadeIn 0.5s ease-out forwards; 
 }
 
-.leftdesign {
+
+section#Projets ul.right {
   display: flex;
-  width: 50%;
   flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
   border: #000 1px solid;
 }
 
-.rightdesign {
+section#Projets ul.left {
   display: flex;
-  width: 50%;
-  flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
   border: #000 1px solid;
 }
+
+#CAHR{
+  height: 100%;
+}
+
+#Antigona{
+  height: 100%;
+}
+
+#Homme {
+  height: 100%;
+}
+
+#Mht {
+  height: 100%;
+}
+
+#Paris8{
+  height: 100%;
+}
+
+#Pets{
+  height: 100%;
+}
+
+#Chronographe{
+  height: 100%;
+}
+
 
 /*Popup */
 
@@ -606,21 +637,6 @@ to {
 }
 }
 
-#CAHR{
-  height: 700px;
-}
-
-#Homme{
-  height: 665px;
-}
-
-#Paris8{
-  height: 300px;
-}
-
-#Pets{
-  height: 665px;
-}
 
 
 
