@@ -1,0 +1,967 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&family=WindSong:wght@400;500&display=swap');
+
+*{
+ padding: 0%;
+ margin: 0%;
+ box-sizing: border-box;
+
+}
+/*variables*/
+:root{
+  background-color:#fff;
+  accent-color:#9F86BD;
+  background-size: cover;
+  background-position: center;
+  background-repeat:no-repeat;
+}
+
+body {
+ width: 100%;
+ min-height: 100vh;
+
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#lightbox{
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.9);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index: 9999;
+}
+
+header,
+.navbar {
+  position: relative;
+  z-index: 10;
+}
+
+#lightbox img{
+max-width:90%;
+max-height:90%;
+}
+
+.prev, .next{
+position:absolute;
+top:50%;
+font-size:40px;
+color:white;
+cursor:pointer;
+padding:20px;
+}
+
+.prev{
+left:20px;
+}
+
+.next{
+right:20px;
+}
+
+.fermer{
+position:absolute;
+top:20px;
+right:30px;
+font-size:40px;
+color:white;
+cursor:pointer;
+}
+
+  /*Page Accueil */
+
+h2.decouvrez {
+  width: 100%;
+  color: #8572a0;
+  font-family: Syne;
+  text-align: left;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 38px;
+}
+
+  .galerie {
+  cursor: pointer;
+}
+
+.dreamz {
+ cursor: pointer;
+}
+
+h1 {
+  color: #8572a0;
+  text-align: left;
+  font-family: Syne;
+  font-size: 90px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.txtentree {
+  width: 100%;
+  color: #8572a0;
+  font-family: Syne;
+  text-align: left;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 38px;
+  padding: 10px 30px 40px 1000px;
+}
+
+.Texteintro {
+  width: 100%;
+  background: white;
+  background-attachment: fixed;
+}
+
+.tosmoz {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: flex-end;
+}
+
+.osmoz {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.osmoz img {
+  width: 500px;
+  height: auto;
+  padding: 0px 10px 10px 10px;
+}
+
+.osmozecrans {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;  
+}
+
+.left {
+  display: flex;
+  justify-content: left;
+  align-items: flex-end;
+}
+
+main.accueil {
+  width:500px;
+  padding: 50px 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat:no-repeat;
+  background: white;
+}
+
+.page-accueil {
+  background: white;
+  background-attachment: fixed;
+  border:rgba(0, 0, 0, 0.1);
+}
+
+.Imagen{
+  width: 80%;
+  align-items: center;
+  line-height: normal;
+  justify-content: center;
+}
+
+.Imagen img {
+  width: 100%;
+  
+}
+
+.mesprojets {
+  color: #8572a0;
+  text-align: center;
+  font-family: Syne;
+  font-size: 52px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  padding: 60px 60px 30px 60px;
+}
+
+.descriptionmesp {
+  width: 100%;
+  color: #000;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-family: Syne;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  padding-bottom: 60px;
+   border-right: 1px solid #000;
+  border-left: 1px solid #000;
+  border-bottom: 1px solid #000;
+
+}
+
+.sous-titrea {
+  color: #8572a0;
+  text-align: left;
+  font-family: Syne;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: normal;
+  padding: 40px 40px 10px 0px;
+}
+
+.description.projets {
+  width: 50%;
+  color: #000;
+  text-align: left;
+  font-family: Syne;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.boutonback {
+font-family: Syne;
+font-size: 16px;
+text-decoration-line: underline;
+font-weight: 500;
+color: #8572a0;
+padding-top: 0px;
+}
+
+.bouton {
+  display: flex;
+  background-color:black;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 15px 60px;
+  color: #fff;
+  border: none;
+  border-radius: 23px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 208px;
+  height: 45px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  margin: 45px auto;
+}
+
+.bbuton:hover {
+  box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.accueilCAHR {
+  height: 300px;
+}
+
+.backup {
+  height: 500px;
+  border: #000 1px solid;
+  padding: 20px; 
+}
+
+/*Page Accueil */
+
+.product {
+  width: 100%;
+  padding: 0px 60px;
+  border-right: 1px solid #000;
+  border-left: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+
+.bandeau {
+  background: radial-gradient(58.83% 58.83% at 50% 43.51%, #FFF 0%, #9F86BD 100%);
+  height: 500px;
+  background-size: cover;
+}
+
+#autresp{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+      background: radial-gradient(58.83% 58.83% at 50% 43.51%, #FFF 0%, #9F86BD 100%);
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+}
+
+.boutons{
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.right img{
+    max-width:80%;
+    height: auto;
+}
+
+h2.decouvrez {
+  background: #FFF;
+  background-position: center;
+  background-size: contain;
+}
+
+/*carousel*/
+
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: 400px; /* hauteur fixe pour uniformiser */
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  height: 100%;
+}
+
+.carousel-track img {
+  min-width: 100%;
+  height: 100%;
+  object-fit: contain; /* garde les proportions */
+   /* optionnel pour combler les espaces */
+}
+
+button.prev,
+button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  color:#8572a0;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+button.prev { left: 10px; }
+button.next { right: 10px; }
+
+/*Page Paula */
+
+#Paula {
+  color: #8572a0;
+  text-align: center;
+  font-family: Syne;
+  font-size: 74px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.Description {
+  width: 50%;
+  color: #000;
+  text-align: center;
+  font-family: Syne;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 70px 250px;
+  border-right: 1px solid #000;
+  border-left: 1px solid #000;
+  border-bottom: 1px solid #000;
+
+}
+
+.Qprojets {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 70px 250px;
+  border-right: 1px solid #000;
+  border-left: 1px solid #000;
+  border-bottom: 1px solid #000;
+  font-family: "Syne";
+
+}
+
+
+.Paula {
+  padding: 0px 70px;
+  }
+
+a,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
+/*Page Design */
+
+#Titre {
+  color: #8572a0;
+  text-align: center;
+  font-family: Syne;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  margin: 60px;
+}
+
+#Titrea {
+  color: #8572a0;
+  text-align: center;
+  font-family: Syne;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  padding-top: 40px;
+  margin: 60px;
+  border-top: #000 1px solid;
+}
+
+#Projets{
+  display: flex;
+  width: 100%;
+  padding: 40px 60px;
+  margin-bottom: 60px;
+  border-top: #000 1px solid;
+  border-left: #000 1px solid;
+  border-right: #000 1px solid;
+  border-bottom: #000 1px solid;
+
+}
+
+#Projets img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#Projets ul{
+  display: flex;
+  width: 100%;
+  align-items: flex-end;
+}
+
+#Projets ul li a> div {
+  height: 100%;
+
+}
+
+#Projets li {
+  list-style: none;
+  padding: 20px;
+
+}
+
+#Projets a {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#Projets .hover-project {
+  background: radial-gradient(58.83% 58.83% at 50% 43.51%, #FFF 0%, #9F86BD 100%);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Instrument Serif";
+  font-style: italic;
+  color:#000;
+  font-size: 24px;
+  opacity: 0;
+}
+
+#Projets .hover-project h3 {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+#Projets a:hover .hover-project h3 {
+  animation: slideIn 0.5s ease-out forwards;
+  animation-delay: 0.2s; 
+}
+
+#Projets a:hover .hover-project {
+  animation: fadeIn 0.5s ease-out forwards; 
+}
+
+/*Popup */
+
+/* Fond sombre */
+.overlay{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.7);
+    z-index:1000;
+}
+
+/* Fenêtre popup */
+.popup{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    background:white;
+    padding:30px;
+    width:500px;
+    max-width:90%;
+    border-radius:10px;
+    text-align:center;
+}
+
+/* bouton fermer */
+.close{
+    position:absolute;
+    top:10px;
+    right:15px;
+    cursor:pointer;
+    font-size:20px;
+}
+
+.projetstitre {
+  color: #000;
+  font-family: Syne;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+
+  to {
+      opacity: 0.8;
+  }
+}
+
+@keyframes slideIn {
+from {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+to {
+  transform: translateY(0);
+  opacity: 1;
+}
+}
+
+#CAHR{
+  height: 700px;
+}
+
+#Homme{
+  height: 665px;
+}
+
+#Paris8{
+  height: 300px;
+}
+
+#Pets{
+  height: 665px;
+}
+
+
+
+/*Page A propos */
+#Titre {
+  color: #8572a0;
+  text-align: center;
+  font-family: Syne;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  margin: 60px;
+}
+
+#Apropos {
+  width: 100%;
+  padding: 0px 60px;
+}
+
+#Apropos>div {
+  width: 100%;
+  border: 1px solid #000;
+  display: flex;
+  align-items: center;
+}
+
+#Apropos h3 {
+  color: #000;
+  font-family: "Instrument Serif";
+  font-size: 96px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: normal;
+}
+
+#Apropos p {
+  color: #000;
+  font-family: Syne;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.PaulaB {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #000;
+  
+}
+
+.PaulaB .Titre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  border-bottom: 1px solid #000;
+}
+
+.PhotoPB {
+  width: 100%;
+  aspect-ratio: 1/1;
+  padding: 60px;
+}
+
+.text {
+  width: 100%;
+  padding: 100px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+}
+
+.PhotoPB img {
+  width: 75%;
+
+  object-fit: cover;
+  align-items: center;
+}
+
+.Competences .Titre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-bottom: 1px solid #000;
+}
+
+.Description .text {
+  width: 100%;
+  padding: 10px, 60px;
+  height: 100%;
+}
+
+.Description p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  border-bottom: 1px solid #000;
+}
+
+/*Header*/
+
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+header {
+  width: 100%;
+  padding: 30px;
+  padding-right: 60px;
+  padding-left: 60px;
+  border-bottom: 1px solid #000;
+
+  position: fixed;   /* fixe la barre */
+  top: 0;            /* colle en haut */
+  left: 0;
+  background-color: white; /* important pour éviter la transparence */
+  z-index: 1000;     /* passe au-dessus du contenu */
+
+}
+
+body {
+  padding-top: 120px; /* adapte selon la hauteur réelle du header */
+}
+
+header nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Navbar transparente au départ */
+header {
+  background-color: white;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Navbar blanche quand on remonte */
+header.nav-scrolled {
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+
+#PB {
+  color: #000;
+  font-family: Syne;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.designedby {
+  color: #000;
+  font-family: Syne;
+  font-size: 12px;
+  font-style: light;
+  line-height: normal;
+}
+
+.nav-links {
+  display: flex;
+  width: 40%;
+  justify-content: space-between;
+  padding-right: 60px;
+}
+
+  .nav-links li {
+  list-style: none;
+  color: #000;
+  font-family: Syne;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+    }
+
+
+/*Footer*/
+ footer {
+  background-color: #000;
+  width: 100%;
+  padding:60px 80px;
+ }
+  
+  .footer{
+  width: 100%;
+  color: #FFF;
+  font-family: "Instrument Serif";
+  font-size: 32px;
+  font-weight: 400;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top:15px;
+  
+  }
+
+.footer-droite {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer h2 {
+  color: #FFF;
+  font-family: "Instrument Serif";
+  font-size: 32px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: normal;
+  
+}
+
+.footer h3 {
+  color: #FFF;
+  font-family: "Instrument Serif";
+  font-size: 22px;
+  line-height: 300%;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.footer a {
+  color: #FFF;
+  font-family: "Instrument Serif";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+a:hover {
+  color: #9177b1;
+}
+
+@media screen and (min-width: 1281) {}
+
+
+
+@media screen and (max-width: 768) {
+  header {
+    width: 100%;
+    padding: 20px;
+    border-bottom: 1px solid #000;
+  
+  }
+  
+  header nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #PB {
+    color: #000;
+    font-family: Syne;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+  }
+
+  h1.designedby {
+    color: #000;
+    font-family: Syne;
+    font-size: 13px;
+    font-style: normal;
+    line-height: normal;
+  }
+  
+  .nav-links {
+    display: flex;
+    width: 10%;
+    justify-content: space-between;
+  }
+  
+    .nav-links li {
+    list-style: none;
+    color: #000;
+    font-family: Syne;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+      }
+
+      footer {
+        background-color: #000;
+        width: 100%;
+        padding:60px 80px;
+       }
+        
+        .footer{
+        width: 100%;
+        color: #FFF;
+        font-family: "Instrument Serif";
+        font-size: 32px;
+        font-weight: 400;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        margin-top:15px;
+        
+        }
+      
+      .footer-droite {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .footer h2 {
+        color: #FFF;
+        font-family: "Instrument Serif";
+        font-size: 32px;
+        font-style: italic;
+        font-weight: 400;
+        line-height: normal;
+        
+      }
+      
+      .footer h3 {
+        color: #FFF;
+        font-family: "Instrument Serif";
+        font-size: 22px;
+        line-height: 300%;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+      
+      .footer a {
+        color: #FFF;
+        font-family: "Instrument Serif";
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+      
+}
+
+
+
+
+@media screen and (max-width: 480) {}
