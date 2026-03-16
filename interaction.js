@@ -55,3 +55,28 @@ indexImage = images.length - 1;
 
 imageGrande.src = images[indexImage].src;
 };
+
+/*Project Zoom*/
+const params = new URLSearchParams(window.location.search);
+const project = params.get("project");
+
+const projects = {
+    cahr: {
+        title: "CAHR Branding",
+        image: "sources/design/Branding/CAHR/CAHR-03.jpg",
+        description: "Projet de branding réalisé pour CAHR."
+    },
+
+    antigona: {
+        title: "Antígona Tropical",
+        image: "sources/design/Editorial/Antígona/Antígona_Mesa de trabajo 1.jpg",
+        description: "Projet éditorial Antígona."
+    }
+};
+
+if (projects[project]) {
+    document.getElementById("project-title").textContent = projects[project].title;
+    document.getElementById("project-image").src = projects[project].image;
+    document.getElementById("project-description").textContent = projects[project].description;
+}
+

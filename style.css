@@ -155,10 +155,11 @@ h1 {
   align-items: center;  
 }
 
-.left {
+.left, .right {
   display: flex;
   justify-content: left;
   align-items: flex-end;
+  width: 85%;
 }
 
 main.accueil {
@@ -317,8 +318,9 @@ padding-top: 0px;
 }
 
 .right img{
-    max-width:80%;
-    height: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 h2.decouvrez {
@@ -493,6 +495,9 @@ a:visited {
   width: 100%;
   height: 100%;
   position: relative;
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
 
 #Projets .hover-project {
@@ -532,6 +537,9 @@ section#Projets ul.right {
   width: 100%;
   align-items: flex-start;
   border: #000 1px solid;
+  display: flex;
+  justify-content: left;
+ 
 }
 
 section#Projets ul.left {
