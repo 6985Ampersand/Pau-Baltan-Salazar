@@ -598,6 +598,38 @@ section#Projets ul.left {
 
 /*Page zoom design */
 
+div#project-gallery {
+  border: #000 1px solid;
+  gap: 20px;
+}
+
+h1#project-title {
+  color: #8572a0;
+  text-align: left;
+  font-family: Syne;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 60px;
+}
+
+p#project-description {
+  width: 100%;
+  color: #000;
+  text-align: left;
+  font-family: Syne;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-bottom: 60px;
+   border-right: 1px solid #000;
+  border-left: 1px solid #000;
+  padding-right: 1000px;
+  padding-left: 60px;
+}
+
 #project-gallery{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -610,74 +642,36 @@ section#Projets ul.left {
     object-fit: cover;
 }
 
-/*Popup */
-
-/* Fond sombre */
-.overlay{
-    display:none;
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.7);
-    z-index:1000;
+.project-arrows{
+    position: fixed;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    pointer-events: none;
 }
 
-/* Fenêtre popup */
-.popup{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    background:white;
-    padding:30px;
-    width:500px;
-    max-width:90%;
-    border-radius:10px;
-    text-align:center;
+.arrow{
+    position: absolute;
+    font-size: 40px;
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    pointer-events: all;
+    transition: 0.3s;
 }
 
-/* bouton fermer */
-.close{
-    position:absolute;
-    top:10px;
-    right:15px;
-    cursor:pointer;
-    font-size:20px;
+.arrow.left{
+    left: 20px;
 }
 
-.projetstitre {
-  color: #000;
-  font-family: Syne;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+.arrow.right{
+    right: 20px;
 }
 
-@keyframes fadeIn {
-  from {
-      opacity: 0;
-  }
-
-  to {
-      opacity: 0.8;
-  }
+.arrow:hover{
+    opacity: 0.5;
+    transform: scale(1.2);
 }
-
-@keyframes slideIn {
-from {
-  transform: translateY(-100%);
-  opacity: 0;
-}
-to {
-  transform: translateY(0);
-  opacity: 1;
-}
-}
-
-
 
 
 /*Page A propos */
