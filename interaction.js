@@ -5,78 +5,74 @@ window.addEventListener("scroll", function() {
   let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
   if (scrollTop < lastScrollTop) {
-    // Scroll vers le haut → navbar blanche
     header.classList.add("nav-scrolled");
   } else {
-    // Scroll vers le bas → navbar transparente
     header.classList.remove("nav-scrolled");
   }
 
   lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 });
 
-/*Galerie Dreamz*/
-let images = document.querySelectorAll(".galerie");
-let lightbox = document.getElementById("lightbox");
-let imageGrande = document.getElementById("imageGrande");
 
-let indexImage = 0;
-
-images.forEach((img, index) => {
-
-img.addEventListener("click", () => {
-indexImage = index;
-lightbox.style.display = "flex";
-imageGrande.src = img.src;
-});
-
-});
-
-document.querySelector(".fermer").onclick = () => {
-lightbox.style.display = "none";
-};
-
-document.querySelector(".next").onclick = () => {
-indexImage++;
-
-if(indexImage >= images.length){
-indexImage = 0;
-}
-
-imageGrande.src = images[indexImage].src;
-};
-
-document.querySelector(".prev").onclick = () => {
-indexImage--;
-
-if(indexImage < 0){
-indexImage = images.length - 1;
-}
-
-imageGrande.src = images[indexImage].src;
-};
-
-/*Project Zoom*/
+/* Project Zoom */
 const params = new URLSearchParams(window.location.search);
 const project = params.get("project");
 
 const projects = {
-    cahr: {
-        title: "CAHR Branding",
-        image: "sources/design/Branding/CAHR/CAHR-03.jpg",
-        description: "Projet de branding réalisé pour CAHR."
-    },
 
-    antigona: {
-        title: "Antígona Tropical",
-        image: "sources/design/Editorial/Antígona/Antígona_Mesa de trabajo 1.jpg",
-        description: "Projet éditorial Antígona."
-    }
+  cahr: {
+    title: "CAHR Branding",
+    description: "Branding pour le Centre for Applied Human Rights de l'Université de York, en Angleterre. Les concepts sont les droits humains, la collaboration et l'activisme, transmis à travers l'élément de l'spirale",
+    gallery: [
+      "sources/design/Branding/CAHR/CAHR-02.jpg",
+      "sources/design/Branding/CAHR/CAHR-03.jpg",
+      "sources/design/Branding/CAHR/CAHR13.jpg",
+      "sources/design/Branding/CAHR/CAHR14.jpg"
+    ]
+  },
+
+  antigona: {
+    title: "Antígona Tropical",
+    description: "Projet éditorial Antígona.",
+    gallery: [
+      "sources/design/Editorial/Antigona/Antigona-4.jpg",
+      "sources/design/Editorial/Antigona/Antigona-5.jpg",
+      "sources/design/Editorial/Antigona/Antigona-6.jpg",
+      "sources/design/Editorial/Antigona/Antigona-3.jpg",
+      "sources/design/Editorial/Antigona/Antigona-2.jpg"       
+    ]
+  },
+
+  edition: {
+    title: "Edition",
+    description: "Projet d'édition réalisé pour un livre d'art.",
+    gallery: [
+      "sources/design/Edition images/Art m_Mesa de trabajo 1.jpg"
+    ]
+  }
+
 };
 
-if (projects[project]) {
-    document.getElementById("project-title").textContent = projects[project].title;
-    document.getElementById("project-image").src = projects[project].image;
-    document.getElementById("project-description").textContent = projects[project].description;
-}
 
+// 🔒 sécurité AVANT tout
+if (!projects[project]) {
+  document.getElementById("project-title").textContent = "Projet introuvable";
+} else {
+
+  // titre + description
+  document.getElementById("project-title").textContent = projects[project].title;
+  document.getElementById("project-description").textContent = projects[project].description;
+
+  // galerie
+  const galleryContainer = document.getElementById("project-gallery");
+  galleryContainer.innerHTML = "";
+
+  projects[project].gallery.forEach(imgSrc => {
+    const img = document.createElement("img");
+    img.src = imgSrc;
+    img.alt = projects[project].title;
+
+    galleryContainer.appendChild(img);
+  });
+
+}

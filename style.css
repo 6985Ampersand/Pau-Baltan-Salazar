@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&family=WindSong:wght@400;500&display=swap');
-
+@import url('<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">');
 *{
  padding: 0%;
  margin: 0%;
@@ -456,6 +456,23 @@ a:visited {
   border-top: #000 1px solid;
 }
 
+.project-nav{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.project-nav a{
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    transition: 0.3s;
+}
+
+.project-nav a:hover{
+    opacity: 0.6;
+}
+
 #Projets{
   display: flex;
   width: 100%;
@@ -579,6 +596,19 @@ section#Projets ul.left {
   height: 100%;
 }
 
+/*Page zoom design */
+
+#project-gallery{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+#project-gallery img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
 
 /*Popup */
 
