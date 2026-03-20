@@ -57,12 +57,13 @@ const projects = {
     title: "MHT Branding",
     description: "Diagnostic d’accessibilité et accessibilité numérique liés à la communication pour le musée associatif Maison des Hommes et des Techniques. Signalétique et dispositifs d’accessibilité adaptés",
     gallery: [
-      "sources/design/Editorial/MHT editorial/15.jpg",
-      "sources/design/Editorial/MHT editorial/MHT-02.jpg",
-      "sources/design/Editorial/MHT editorial/MHT-03.jpg",
-      "sources/design/Editorial/MHT editorial/MHT-04.jpg",
-      "sources/design/Editorial/MHT editorial/MHT-05.jpg",
-      "sources/design/Editorial/MHT editorial/MHT-10.jpg"
+      "sources/design/Editorial/mht_editorial/15.jpg",
+      "sources/design/Editorial/mht_editorial/MHT-02.jpg",
+      "sources/design/Editorial/mht_editorial/MHT-03.jpg",
+      "sources/design/Editorial/mht_editorial/MHT-04.jpg",
+      "sources/design/Editorial/mht_editorial/MHT-05.jpg",
+      "sources/design/Editorial/mht_editorial/exemples-01.jpg"
+
     ]
   },
 
@@ -106,6 +107,15 @@ const projects = {
       "sources/design/Editorial/Chronographe/pres.jpg"
     ]
 
+  },
+
+  dreamz: {
+    title: "Dreamz app",
+    description: "Dreamz est une expérience immersive et personnalisée qui stimule l’imagination et le développement des enfants en proposant des histoires interactives adaptées à leurs goûts et besoins",
+    gallery: [
+      "sources/design/Numérique/Dreamz/dreamz_m.jpg",
+      "sources/design/Numérique/dreamz_ecrans.jpg"
+    ]
   }
 
 };

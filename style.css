@@ -470,7 +470,7 @@ a:visited {
     padding: 40px;
     font-family: "Instrument Serif";
     font-style: italic;
-    font-size: 40px;
+    font-size: 36px;
     color:#000;
     font-weight: 100;
 }
@@ -606,6 +606,7 @@ section#Projets ul.left {
 
 div#project-gallery {
   border: #000 1px solid;
+  margin: 30px;
   gap: 20px;
 }
 
@@ -843,7 +844,8 @@ header.nav-scrolled {
   color: #000;
   font-family: Syne;
   font-size: 12px;
-  font-style: light;
+  font-weight: 700;
+  font-style: normal;
   line-height: normal;
 }
 
