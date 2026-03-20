@@ -62,7 +62,7 @@ const projects = {
       "sources/design/Editorial/MHT editorial/MHT-03.jpg",
       "sources/design/Editorial/MHT editorial/MHT-04.jpg",
       "sources/design/Editorial/MHT editorial/MHT-05.jpg",
-      "sources/design/Editorial/MHT editorial/MHT-10.jpg",
+      "sources/design/Editorial/MHT editorial/MHT-10.jpg"
     ]
   },
 
@@ -134,25 +134,36 @@ if (!projects[project]) {
 
 }
 
-// fleches entre projets*/
-const projectKeys = Object.keys(projects);
-const currentIndex = projectKeys.indexOf(project);
+// fleches entre projets
+/* Navigation entre les projets */
+const projectOrder = ["cahr", "antigona", "edition", "mht", "paris8", "pets", "chronographe"];
+
+const currentIndex = projectOrder.indexOf(project);
 
 const prevBtn = document.getElementById("prev-project");
 const nextBtn = document.getElementById("next-project");
 
-// ← gauche
-if (currentIndex > 0) {
-    const prevProject = projectKeys[currentIndex - 1];
-    prevBtn.href = `zoomproj.html?project=${prevProject}`;
+// sécurité
+if (currentIndex === -1) {
+    console.log("Projet non trouvé");
 } else {
-    prevBtn.style.display = "none";
-}
 
-// → droite
-if (currentIndex < projectKeys.length - 1) {
-    const nextProject = projectKeys[currentIndex + 1];
-    nextBtn.href = `zoomproj.html?project=${nextProject}`;
-} else {
-    nextBtn.style.display = "none";
+    // ← précédent
+    if (currentIndex > 0) {
+        const prevProject = projectOrder[currentIndex - 1];
+        prevBtn.href = `zoomproj.html?project=${prevProject}`;
+        prevBtn.textContent = "← Projet précédent";
+    } else {
+        prevBtn.style.display = "none";
+    }
+
+    // → suivant
+    if (currentIndex < projectOrder.length - 1) {
+        const nextProject = projectOrder[currentIndex + 1];
+        nextBtn.href = `zoomproj.html?project=${nextProject}`;
+        nextBtn.textContent = "Projet suivant →";
+    } else {
+        nextBtn.style.display = "none";
+    }
+
 }
