@@ -53,19 +53,6 @@ const projects = {
     ]
   },
 
-  mht: {
-    title: "MHT Branding",
-    description: "Diagnostic d’accessibilité et accessibilité numérique liés à la communication pour le musée associatif Maison des Hommes et des Techniques. Signalétique et dispositifs d’accessibilité adaptés",
-    gallery: [
-      "sources/design/Editorial/mht_editorial/15.jpg",
-      "sources/design/Editorial/mht_editorial/MHT-02.jpg",
-      "sources/design/Editorial/mht_editorial/MHT-03.jpg",
-      "sources/design/Editorial/mht_editorial/MHT-04.jpg",
-      "sources/design/Editorial/mht_editorial/MHT-05.jpg",
-      "sources/design/Editorial/mht_editorial/exemples-01.jpg"
-
-    ]
-  },
 
   paris8: {
     title: "Paris8 Branding",
@@ -113,10 +100,49 @@ const projects = {
     title: "Dreamz app",
     description: "Dreamz est une expérience immersive et personnalisée qui stimule l’imagination et le développement des enfants en proposant des histoires interactives adaptées à leurs goûts et besoins",
     gallery: [
-      "sources/design/Numérique/Dreamz/dreamz_m.jpg",
-      "sources/design/Numérique/dreamz_ecrans.jpg"
+      "sources/numerique/Dreamz/dreamz_m.jpg",
+      "sources/numerique/Dreamz/dreamz_ecrans.jpg"
     ]
-  }
+  },
+
+    mht: {
+    title: "MHT design",
+    description: "Adaptation d'un service : design graphique, stratégie de communication, diagnostic d’accessibilité et accessibilité numérique et UI design pour le site web du musée associatif Maison des Hommes et des Techniques. Signalétique et dispositifs d’accessibilité adaptés",
+    gallery: [
+      "sources/numerique/mht/video.png",
+      "sources/numerique/mht/MHT-03.jpg",
+      "sources/numerique/mht/MHT-09.png",
+      "sources/numerique/mht/MHT-05.jpg",
+      "sources/numerique/mht/MHT-08.png",
+      "sources/numerique/mht/MHT-02.jpg",
+      "sources/numerique/mht/MHT-04.jpg"
+
+    ]
+  },
+
+    museeor: {
+      title: "Musée de l'or",
+      description: "Publications numériques pour le Musée de l'or de Bogota, en Colombie. Le projet comprend la création d'une série de publications numériques interactives qui mettent en valeur les collections du musée. Les publications sont conçues pour être accessibles sur différents appareils, offrant une expérience éducative aux visiteurs du musée.",
+      gallery: [
+        "sources/numerique/Musee_or/credits.jpg",
+        "sources/numerique/Musee_or/deux.jpg",
+        "sources/numerique/Musee_or/portrait.jpg",
+        "sources/numerique/Musee_or/pub.jpg",
+      ]
+    },
+
+    miraflores: {
+      title: "Miraflores",
+      description: "Présentation numérique pour le travail final de licence en architecture communautaire participative",
+      gallery: [
+        "sources/numerique/miraflores/ligne.jpg",
+        "sources/numerique/miraflores/bleu.jpg",
+        "sources/numerique/miraflores/entrada.jpg",
+        "sources/numerique/miraflores/extrait.jpg",
+        "sources/numerique/miraflores/rose.jpg",
+        "sources/numerique/miraflores/portada.jpg"
+      ]
+    }
 
 };
 
