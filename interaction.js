@@ -96,31 +96,7 @@ const projects = {
 
   },
 
-  dreamz: {
-    title: "Dreamz app",
-    description: "Dreamz est une expérience immersive et personnalisée qui stimule l’imagination et le développement des enfants en proposant des histoires interactives adaptées à leurs goûts et besoins",
-    gallery: [
-      "sources/numerique/Dreamz/dreamz_m.jpg",
-      "sources/numerique/Dreamz/dreamz_ecrans.jpg"
-    ]
-  },
-
-    mht: {
-    title: "MHT design",
-    description: "Adaptation d'un service : design graphique, stratégie de communication, diagnostic d’accessibilité et accessibilité numérique et UI design pour le site web du musée associatif Maison des Hommes et des Techniques. Signalétique et dispositifs d’accessibilité adaptés",
-    gallery: [
-      "sources/numerique/mht/video.png",
-      "sources/numerique/mht/MHT-03.jpg",
-      "sources/numerique/mht/MHT-09.png",
-      "sources/numerique/mht/MHT-05.jpg",
-      "sources/numerique/mht/MHT-08.png",
-      "sources/numerique/mht/MHT-02.jpg",
-      "sources/numerique/mht/MHT-04.jpg"
-
-    ]
-  },
-
-    museeor: {
+      museeor: {
       title: "Musée de l'or",
       description: "Publications numériques pour le Musée de l'or de Bogota, en Colombie. Le projet comprend la création d'une série de publications numériques interactives qui mettent en valeur les collections du musée. Les publications sont conçues pour être accessibles sur différents appareils, offrant une expérience éducative aux visiteurs du musée.",
       gallery: [
@@ -142,7 +118,65 @@ const projects = {
         "sources/numerique/miraflores/rose.jpg",
         "sources/numerique/miraflores/portada.jpg"
       ]
-    }
+    },
+
+  dreamz: {
+    title: "Dreamz app",
+    description: "Dreamz est une expérience immersive et personnalisée qui stimule l’imagination et le développement des enfants en proposant des histoires interactives adaptées à leurs goûts et besoins",
+    gallery: [
+      "sources/numerique/Dreamz/dreamz_m.jpg",
+      "sources/numerique/Dreamz/dreamz_ecrans.jpg",
+
+    ]
+  },
+
+    mht: {
+    title: "MHT design",
+    description: "Adaptation d'un service : design graphique, stratégie de communication, diagnostic d’accessibilité et accessibilité numérique et UI design pour le site web du musée associatif Maison des Hommes et des Techniques. Signalétique et dispositifs d’accessibilité adaptés",
+    gallery: [
+      "sources/numerique/mht/video.png",
+      "sources/numerique/mht/MHT-03.jpg",
+      "sources/numerique/mht/MHT-09.png",
+      "sources/numerique/mht/MHT-05.jpg",
+      "sources/numerique/mht/MHT-08.png",
+      "sources/numerique/mht/MHT-02.jpg",
+      "sources/numerique/mht/MHT-04.jpg"
+
+    ]
+  },
+
+    backup: {
+    title: "Backup simulation",
+    description: "Simulation d'une expérience de backup pour un projet de design d'expérience utilisateur. L'objectif était de créer une interface intuitive et engageante qui guide les utilisateurs à travers le processus de sauvegarde de leurs données, tout en mettant en avant les avantages et les fonctionnalités du service proposé.",
+    gallery: [
+      "sources/numerique/backup/retour-ux2.png",
+      "sources/numerique/backup/projet.png",
+      "sources/numerique/backup/cg_1.png",
+      "sources/numerique/backup/cg_2.png",
+      "sources/numerique/backup/cg_3.png",
+      "sources/numerique/backup/cg_4.png",
+      "sources/numerique/backup/Intro.png"
+    ]
+  },
+
+    femmesnature: {
+    title: "Femmes & nature",
+    description: "Explorer les liens entre les affiches japonaises et européennes en mettant en évidence la manière dont elles abordent les thématiques de la nature et de la figure féminine, dans une expérience numérique.",
+    gallery: [
+      "sources/numerique/Femmes_nature/femmesn_couleurs.jpg",
+      "sources/numerique/Femmes_nature/femmesn_dialogue.jpg",
+      "sources/numerique/Femmes_nature/moodboard.jpg",
+      "sources/numerique/Femmes_nature/personaun.jpg",
+      "sources/numerique/Femmes_nature/femmesn_userf.jpg",
+      "sources/numerique/Femmes_nature/composition.png",
+      "sources/numerique/Femmes_nature/Accueil.jpg"
+    ]
+  },
+
+  locosporlatipo: {
+  title: "Locos por la tipo site web CMS",
+  description: ""
+  }
 
 };
 
@@ -170,33 +204,40 @@ if (!projects[project]) {
 
 }
 
-// fleches entre projets
 /* Navigation entre les projets */
-const projectOrder = ["cahr", "antigona", "edition", "mht", "paris8", "pets", "chronographe"];
+
+// détecter la page actuelle
+const isNumeriquePage = window.location.pathname.includes("zoomprojdeux.html");
+
+// ordre des projets
+const projectOrder = isNumeriquePage
+  ? ["mht", "entreplomos", "dreamz","backup","femmesnature"]   // 👉 projets NUMÉRIQUE
+  : ["cahr", "antigona", "edition", "museeor","paris8","pets","chronographe","miraflores"]; // 👉 projets DESIGN
 
 const currentIndex = projectOrder.indexOf(project);
 
 const prevBtn = document.getElementById("prev-project");
 const nextBtn = document.getElementById("next-project");
 
-// sécurité
-if (currentIndex === -1) {
-    console.log("Projet non trouvé");
-} else {
+if (currentIndex !== -1) {
 
-    // ← précédent
+    // précédent
     if (currentIndex > 0) {
         const prevProject = projectOrder[currentIndex - 1];
-        prevBtn.href = `zoomproj.html?project=${prevProject}`;
+        prevBtn.href = isNumeriquePage
+            ? `zoomprojdeux.html?project=${prevProject}`
+            : `zoomproj.html?project=${prevProject}`;
         prevBtn.textContent = "← Projet précédent";
     } else {
         prevBtn.style.display = "none";
     }
 
-    // → suivant
+    // suivant
     if (currentIndex < projectOrder.length - 1) {
         const nextProject = projectOrder[currentIndex + 1];
-        nextBtn.href = `zoomproj.html?project=${nextProject}`;
+        nextBtn.href = isNumeriquePage
+            ? `zoomprojdeux.html?project=${nextProject}`
+            : `zoomproj.html?project=${nextProject}`;
         nextBtn.textContent = "Projet suivant →";
     } else {
         nextBtn.style.display = "none";
