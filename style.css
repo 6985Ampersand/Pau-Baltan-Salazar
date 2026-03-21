@@ -81,7 +81,11 @@ cursor:pointer;
 
   /*Page Accueil */
 
-h2.decouvrez {
+.img {
+width: 50%;
+}
+
+  h2.decouvrez {
   width: 100%;
   color: #8572a0;
   font-family: Syne;
@@ -137,7 +141,7 @@ h1 {
 }
 
 main.accueil {
-  width:500%;
+  width:500px;
   padding: 50px 0;
   background-size: cover;
   background-position: center;
@@ -164,8 +168,8 @@ main.accueil {
 }
 
 img.mot-design {
-  margin-top: 50px;
   height: 400px;
+  margin-top: 50px;
 }
 
 .mesprojets {
@@ -239,7 +243,7 @@ padding-top: 0px;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
-  width: 208%;
+  width: 208px;
   height: 45px;
   justify-content: center;
   align-items: center;
@@ -623,8 +627,6 @@ h1#project-title {
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  margin-top: 60px;
-  margin-left: 60px;
 }
 
 p#project-description {
@@ -636,7 +638,7 @@ p#project-description {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  padding-bottom: 10px;
+  padding-bottom: 60px;
   border-right: 1px solid #000;
   border-left: 1px solid #000;
   padding-right: 800px;
@@ -706,7 +708,6 @@ p#project-description {
 
 #Apropos>div {
   width: 100%;
-  border: 1px solid #000;
   display: flex;
   align-items: center;
 }
@@ -714,10 +715,12 @@ p#project-description {
 #Apropos h3 {
   color: #000;
   font-family: "Instrument Serif";
-  font-size: 75px;
+  font-size: 70px;
   font-style: italic;
   font-weight: 400;
   line-height: normal;
+  padding-left: 30px;
+  padding-top: 30px;
 }
 
 #Apropos p {
@@ -727,13 +730,14 @@ p#project-description {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  margin: 30px;
 }
 
 .PaulaB {
   width: 100%;
   display: flex;
   flex-direction: column;
-  border-right: 1px solid #000;
+  
   
 }
 
@@ -741,15 +745,17 @@ p#project-description {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 60px;
+  padding: 10px;
   border-bottom: 1px solid #000;
 }
 
 .PhotoPB {
-  width: 100%;
+  width: 400%;
   aspect-ratio: 1/1;
   padding: 60px;
+  align-items: center;
 }
+
 
 .text {
   width: 100%;
