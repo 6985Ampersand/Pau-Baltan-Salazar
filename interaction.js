@@ -217,7 +217,7 @@ const projects = {
   gallery: [
     "sources/numerique/entreplomos/entreplomos.jpg",
     "sources/numerique/entreplomos/entreplomos_cat.jpg",
-    "sources/numerique/entreplomos/entreplomos_m.jpg",
+    "sources/numerique/entreplomos/entreplomos_m.svg",
     "sources/numerique/entreplomos/entreplomos_salve.jpg"
   ]
 },
