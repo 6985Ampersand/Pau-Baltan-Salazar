@@ -369,7 +369,7 @@ button.next { right: 10px; }
   color: #000;
   text-align: center;
   font-family: Syne;
-  font-size: 22px;
+  font-size: 60px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -627,6 +627,8 @@ h1#project-title {
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  margin-top: 80px;
+  margin-left: 60px;
 }
 
 p#project-description {
@@ -638,11 +640,12 @@ p#project-description {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  padding-bottom: 60px;
   border-right: 1px solid #000;
   border-left: 1px solid #000;
-  padding-right: 800px;
+  padding-right: 500px;
   padding-left: 60px;
+  padding-bottom: 30px;
+  padding-top: 20px;
 }
 
 #project-gallery{
