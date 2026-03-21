@@ -227,11 +227,11 @@ const projects = {
     description: " Osmoz est une application de récits érotiques interactifs, une alternative de reappropriation de nos fantasmes et faite pour stimuler notre imaginaire érotique.",
   gallery: [
     "sources/numerique/Osmoz/Moodboard.jpeg",
-    "sources/numerique/OSmoz/ecrans.jpg",
-    "sources/numerique/OSmoz/livret.jpg",
-    "sources/numerique/OSmoz/pages.jpg",
-    "sources/numerique/OSmoz/portada.jpg",
-    "sources/numerique/OSmoz/vis.png"
+    "sources/numerique/Osmoz/ecrans.jpg",
+    "sources/numerique/Osmoz/livret.jpg",
+    "sources/numerique/Osmoz/pages.jpg",
+    "sources/numerique/Osmoz/portada.jpg",
+    "sources/numerique/Osmoz/vis.png"
   ]
   }
 
