@@ -14,6 +14,43 @@ window.addEventListener("scroll", function() {
 });
 
 
+/* Lightbox pour la page d'accueil */
+const lightbox = document.getElementById("lightbox");
+const imageGrande = document.getElementById("imageGrande");
+const fermerBtn = document.querySelector(".fermer");
+const nextLightbox = document.querySelector(".next");
+const prevLightbox = document.querySelector(".prev");
+let galleryImages = Array.from(document.querySelectorAll(".galerie"));
+let currentGalleryIndex = -1;
+
+function ouvrirLightbox(index) {
+  if (!lightbox || !imageGrande || galleryImages.length === 0) return;
+  currentGalleryIndex = index;
+  imageGrande.src = galleryImages[currentGalleryIndex].src;
+  lightbox.style.display = "flex";
+}
+
+function fermerLightbox() {
+  if (!lightbox) return;
+  lightbox.style.display = "none";
+}
+
+function defilerLightbox(direction) {
+  if (galleryImages.length === 0) return;
+  currentGalleryIndex = (currentGalleryIndex + direction + galleryImages.length) % galleryImages.length;
+  imageGrande.src = galleryImages[currentGalleryIndex].src;
+}
+
+galleryImages.forEach((img, index) => {
+  img.addEventListener("click", () => ouvrirLightbox(index));
+});
+
+if (fermerBtn) fermerBtn.addEventListener("click", fermerLightbox);
+if (lightbox) lightbox.addEventListener("click", (e) => { if (e.target === lightbox) fermerLightbox(); });
+if (nextLightbox) nextLightbox.addEventListener("click", () => defilerLightbox(1));
+if (prevLightbox) prevLightbox.addEventListener("click", () => defilerLightbox(-1));
+
+
 /* Project Zoom */
 const params = new URLSearchParams(window.location.search);
 const project = params.get("project");
@@ -100,10 +137,10 @@ const projects = {
       title: "Musée de l'or",
       description: "Publications numériques pour le Musée de l'or de Bogota, en Colombie. Le projet comprend la création d'une série de publications numériques interactives qui mettent en valeur les collections du musée. Les publications sont conçues pour être accessibles sur différents appareils, offrant une expérience éducative aux visiteurs du musée.",
       gallery: [
-        "sources/numerique/Musee_or/credits.jpg",
-        "sources/numerique/Musee_or/deux.jpg",
-        "sources/numerique/Musee_or/portrait.jpg",
-        "sources/numerique/Musee_or/pub.jpg",
+        "sources/design/Musee_or/credits.jpg",
+        "sources/design/Musee_or/deux.jpg",
+        "sources/design/Musee_or/portrait.jpg",
+        "sources/design/Musee_or/pub.jpg",
       ]
     },
 
@@ -111,24 +148,14 @@ const projects = {
       title: "Miraflores",
       description: "Présentation numérique pour le travail final de licence en architecture communautaire participative",
       gallery: [
-        "sources/numerique/miraflores/ligne.jpg",
-        "sources/numerique/miraflores/bleu.jpg",
-        "sources/numerique/miraflores/entrada.jpg",
-        "sources/numerique/miraflores/extrait.jpg",
-        "sources/numerique/miraflores/rose.jpg",
-        "sources/numerique/miraflores/portada.jpg"
+        "sources/design/miraflores/ligne.jpg",
+        "sources/design/miraflores/bleu.jpg",
+        "sources/design/miraflores/entrada.jpg",
+        "sources/design/miraflores/extrait.jpg",
+        "sources/design/miraflores/rose.jpg",
+        "sources/design/miraflores/portada.jpg"
       ]
     },
-
-  dreamz: {
-    title: "Dreamz app",
-    description: "Dreamz est une expérience immersive et personnalisée qui stimule l’imagination et le développement des enfants en proposant des histoires interactives adaptées à leurs goûts et besoins",
-    gallery: [
-      "sources/numerique/Dreamz/dreamz_m.jpg",
-      "sources/numerique/Dreamz/dreamz_ecrans.jpg",
-
-    ]
-  },
 
     mht: {
     title: "MHT design",
@@ -151,10 +178,10 @@ const projects = {
     gallery: [
       "sources/numerique/backup/retour-ux2.png",
       "sources/numerique/backup/projet.png",
-      "sources/numerique/backup/cg_1.png",
-      "sources/numerique/backup/cg_2.png",
-      "sources/numerique/backup/cg_3.png",
-      "sources/numerique/backup/cg_4.png",
+      "sources/numerique/backup/cg_1.jpg",
+      "sources/numerique/backup/cg_2.jpg",
+      "sources/numerique/backup/cg_3.jpg",
+      "sources/numerique/backup/cg_4.jpg",
       "sources/numerique/backup/Intro.png"
     ]
   },
@@ -174,8 +201,38 @@ const projects = {
   },
 
   locosporlatipo: {
-  title: "Locos por la tipo site web CMS",
-  description: ""
+  title: "Locos por la tipo",
+  description: "Site pour le groupe de recherche « Locos por la tipo ». Création d'identité visuelle, mise à jour du site, réseaux sociaux.",
+  gallery: [
+    "sources/numerique/locosporlatipo/credits.jpg",
+    "sources/numerique/locosporlatipo/page_projets.jpg",
+    "sources/numerique/locosporlatipo/page_zoom.jpg",
+    "sources/numerique/locosporlatipo/scroll.png"
+  ]
+},
+
+  entreplomos: {
+  title: "Entre plomos",
+  description: "Site web pour le projet Entre Plomos du Groupe de Recherche en Études Typographiques de l'Université du Cauca.",
+  gallery: [
+    "sources/numerique/entreplomos/entreplomos.jpg",
+    "sources/numerique/entreplomos/entreplomos_cat.jpg",
+    "sources/numerique/entreplomos/entreplomos_m.jpg",
+    "sources/numerique/entreplomos/entreplomos_salve.jpg"
+  ]
+},
+
+  osmoz: {
+    title: "Osmoz",
+    description: " Osmoz est une application de récits érotiques interactifs, une alternative de reappropriation de nos fantasmes et faite pour stimuler notre imaginaire érotique.",
+  gallery: [
+    "sources/numerique/Osmoz/Moodboard.jpeg",
+    "sources/numerique/OSmoz/ecrans.jpg",
+    "sources/numerique/OSmoz/livret.jpg",
+    "sources/numerique/OSmoz/pages.jpg",
+    "sources/numerique/OSmoz/portada.jpg",
+    "sources/numerique/OSmoz/vis.png"
+  ]
   }
 
 };
@@ -211,7 +268,7 @@ const isNumeriquePage = window.location.pathname.includes("zoomprojdeux.html");
 
 // ordre des projets
 const projectOrder = isNumeriquePage
-  ? ["mht", "entreplomos", "dreamz","backup","femmesnature"]   // 👉 projets NUMÉRIQUE
+  ? ["mht", "entreplomos", "dreamz","backup","femmesnature","osmoz","locosporlatipo"]   // 👉 projets NUMÉRIQUE
   : ["cahr", "antigona", "edition", "museeor","paris8","pets","chronographe","miraflores"]; // 👉 projets DESIGN
 
 const currentIndex = projectOrder.indexOf(project);
