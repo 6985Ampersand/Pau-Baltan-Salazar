@@ -137,7 +137,7 @@ h1 {
 }
 
 main.accueil {
-  width:500px;
+  width:500%;
   padding: 50px 0;
   background-size: cover;
   background-position: center;
@@ -239,7 +239,7 @@ padding-top: 0px;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
-  width: 208px;
+  width: 208%;
   height: 45px;
   justify-content: center;
   align-items: center;
