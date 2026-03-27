@@ -73,10 +73,13 @@ const projects = {
     description: "Projet éditorial Antígona.",
     gallery: [
       "sources/design/Editorial/Antigona/Antigona-4.jpg",
+      "sources/design/Editorial/Antigona/Antigona-2.jpg", 
       "sources/design/Editorial/Antigona/Antigona-5.jpg",
-      "sources/design/Editorial/Antigona/Antigona-6.jpg",
       "sources/design/Editorial/Antigona/Antigona-3.jpg",
-      "sources/design/Editorial/Antigona/Antigona-2.jpg"       
+      "sources/design/Editorial/Antigona/Antigona-6.jpg",
+      "sources/design/Editorial/Antigona/Antigona-portada.jpg"
+      
+            
     ]
   },
 
@@ -162,6 +165,7 @@ const projects = {
     description: "Adaptation d'un service : design graphique, stratégie de communication, diagnostic d’accessibilité et accessibilité numérique et UI design pour le site web du musée associatif Maison des Hommes et des Techniques. Signalétique et dispositifs d’accessibilité adaptés",
     gallery: [
       "sources/numerique/mht/video.png",
+      "sources/numerique/mht/MHT-01.jpg",
       "sources/numerique/mht/MHT-03.jpg",
       "sources/numerique/mht/MHT-09.png",
       "sources/numerique/mht/MHT-05.jpg",
@@ -176,13 +180,23 @@ const projects = {
     title: "Backup simulation",
     description: "Simulation d'une expérience de backup pour un projet de design d'expérience utilisateur. L'objectif était de créer une interface intuitive et engageante qui guide les utilisateurs à travers le processus de sauvegarde de leurs données, tout en mettant en avant les avantages et les fonctionnalités du service proposé.",
     gallery: [
+      "sources/numerique/backup/backup-03.jpg",
+      "sources/numerique/backup/backup-04.jpg",
       "sources/numerique/backup/retour-ux2.png",
-      "sources/numerique/backup/projet.png",
       "sources/numerique/backup/cg_1.jpg",
       "sources/numerique/backup/cg_2.jpg",
       "sources/numerique/backup/cg_3.jpg",
+      "sources/numerique/backup/backup-02.jpg",
       "sources/numerique/backup/cg_4.jpg",
-      "sources/numerique/backup/Intro.png"
+      "sources/numerique/backup/Intro.png",
+      "sources/numerique/backup/outro-5.gif",
+      "sources/numerique/backup/RS-07.jpg",
+      "sources/numerique/backup/user.jpg",
+      "sources/numerique/backup/personaje.gif",
+      "sources/numerique/backup/backup-01.jpg",
+      "sources/numerique/backup/mockup.jpg"
+
+      
     ]
   },
 
@@ -196,7 +210,8 @@ const projects = {
       "sources/numerique/Femmes_nature/personaun.jpg",
       "sources/numerique/Femmes_nature/femmesn_userf.jpg",
       "sources/numerique/Femmes_nature/composition.png",
-      "sources/numerique/Femmes_nature/Accueil.jpg"
+      "sources/numerique/Femmes_nature/ecran-05.jpg",
+      "sources/numerique/Femmes_nature/ecran-06.jpg"
     ]
   },
 
@@ -212,13 +227,16 @@ const projects = {
 },
 
   entreplomos: {
-  title: "Entre plomos",
+  title: "Entreplomos",
   description: "Site web pour le projet Entre Plomos du Groupe de Recherche en Études Typographiques de l'Université du Cauca.",
   gallery: [
-    "sources/numerique/entreplomos/entreplomos.jpg",
-    "sources/numerique/entreplomos/entreplomos_cat.jpg",
-    "sources/numerique/entreplomos/entreplomos_m.svg",
-    "sources/numerique/entreplomos/entreplomos_salve.jpg"
+    "sources/numerique/entreplomos/machine.jpg",
+    "sources/numerique/entreplomos/tout.png",
+    "sources/numerique/entreplomos/portada.jpg",
+    "sources/numerique/entreplomos/violet.jpg",
+    "sources/numerique/entreplomos/invitation.png",
+    "sources/numerique/entreplomos/catalogue.png"
+    
   ]
 },
 
@@ -233,6 +251,17 @@ const projects = {
     "sources/numerique/Osmoz/portada.jpg",
     "sources/numerique/Osmoz/vis.png"
   ]
+  },
+
+  villenantes: {
+    title: "Communication Quartier de Breil",
+    description: "Diagnostic de communication pour le quartier de Breil, mise en page, stratégie de communication, gestion de projets avec la ville de Nantes",
+    gallery: [
+      "sources/design/Villenantes/pages.jpg",
+      "sources/design/Villenantes/portada.jpg",
+      "sources/design/Villenantes/carte.jpg",
+      "sources/design/Villenantes/schema.jpg"
+    ]
   }
 
 };
@@ -245,7 +274,40 @@ if (!projects[project]) {
 
   // titre + description
   document.getElementById("project-title").textContent = projects[project].title;
-  document.getElementById("project-description").textContent = projects[project].description;
+  const projectDescription = document.getElementById("project-description");
+  projectDescription.innerHTML = "";
+  const descriptionText = projects[project].description || "";
+  const urlRegex = /(https?:\/\/[^\s]+)/g;
+  let lastIndex = 0;
+  let match;
+
+  while ((match = urlRegex.exec(descriptionText)) !== null) {
+    if (match.index > lastIndex) {
+      projectDescription.appendChild(document.createTextNode(descriptionText.slice(lastIndex, match.index)));
+    }
+    const url = match[0];
+    const linkEl = document.createElement("a");
+    linkEl.href = url;
+    linkEl.target = "_blank";
+    linkEl.rel = "noopener noreferrer";
+    linkEl.textContent = url;
+    projectDescription.appendChild(linkEl);
+    lastIndex = match.index + url.length;
+  }
+
+  if (lastIndex < descriptionText.length) {
+    projectDescription.appendChild(document.createTextNode(descriptionText.slice(lastIndex)));
+  }
+
+  if (projects[project].link) {
+    projectDescription.appendChild(document.createElement("br"));
+    const linkEl = document.createElement("a");
+    linkEl.href = projects[project].link;
+    linkEl.target = "_blank";
+    linkEl.rel = "noopener noreferrer";
+    linkEl.textContent = projects[project].linkLabel || projects[project].link;
+    projectDescription.appendChild(linkEl);
+  }
 
   // galerie
   const galleryContainer = document.getElementById("project-gallery");
@@ -269,7 +331,7 @@ const isNumeriquePage = window.location.pathname.includes("zoomprojdeux.html");
 // ordre des projets
 const projectOrder = isNumeriquePage
   ? ["mht", "entreplomos", "dreamz","backup","femmesnature","osmoz","locosporlatipo"]   // 👉 projets NUMÉRIQUE
-  : ["cahr", "antigona", "edition", "museeor","paris8","pets","chronographe","miraflores"]; // 👉 projets DESIGN
+  : ["cahr", "antigona", "edition", "museeor","paris8","pets","chronographe","miraflores","villenantes"]; // 👉 projets DESIGN
 
 const currentIndex = projectOrder.indexOf(project);
 
