@@ -235,7 +235,9 @@ const projects = {
     "sources/numerique/entreplomos/portada.jpg",
     "sources/numerique/entreplomos/violet.jpg",
     "sources/numerique/entreplomos/invitation.png",
-    "sources/numerique/entreplomos/catalogue.png"
+    "sources/numerique/entreplomos/catalogue.png",
+    "sources/numerique/entreplomos/carateres.jpg"
+
     
   ]
 },
