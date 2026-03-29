@@ -189,13 +189,9 @@ const projects = {
       "sources/numerique/backup/backup-02.jpg",
       "sources/numerique/backup/cg_4.jpg",
       "sources/numerique/backup/Intro.png",
-      "sources/numerique/backup/outro-5.gif",
       "sources/numerique/backup/RS-07.jpg",
       "sources/numerique/backup/user.jpg",
-      "sources/numerique/backup/personaje.gif",
-      "sources/numerique/backup/backup-01.jpg",
-      "sources/numerique/backup/mockup.jpg"
-
+      "sources/numerique/backup/backup-01.jpg"
       
     ]
   },
@@ -237,8 +233,6 @@ const projects = {
     "sources/numerique/entreplomos/invitation.png",
     "sources/numerique/entreplomos/catalogue.png",
     "sources/numerique/entreplomos/carateres.jpg"
-
-    
   ]
 },
 
