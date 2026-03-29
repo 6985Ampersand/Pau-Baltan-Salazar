@@ -326,7 +326,7 @@ const isNumeriquePage = window.location.pathname.includes("zoomprojdeux.html");
 
 // ordre des projets
 const projectOrder = isNumeriquePage
-  ? ["entreplomos", "mht","osmoz","backup","femmesnature","locosporlatipo"]   // 👉 projets NUMÉRIQUE
+  ? ["entreplomos","mht","osmoz","backup","femmesnature","locosporlatipo"]   // 👉 projets NUMÉRIQUE
   : ["cahr", "antigona", "edition", "museeor","paris8","pets","chronographe","miraflores","villenantes"]; // 👉 projets DESIGN
 
 const currentIndex = projectOrder.indexOf(project);
@@ -364,6 +364,8 @@ if (currentIndex !== -1) {
 const toggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
 
-toggle.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
-});
+if (toggle && navLinks) {
+  toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+}
