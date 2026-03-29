@@ -176,26 +176,6 @@ const projects = {
     ]
   },
 
-    backup: {
-    title: "Backup simulation",
-    description: "Simulation d'une expérience de backup pour un projet de design d'expérience utilisateur. L'objectif était de créer une interface intuitive et engageante qui guide les utilisateurs à travers le processus de sauvegarde de leurs données, tout en mettant en avant les avantages et les fonctionnalités du service proposé.",
-    gallery: [
-      "sources/numerique/backup/backup-03.jpg",
-      "sources/numerique/backup/backup-04.jpg",
-      "sources/numerique/backup/retour-ux2.png",
-      "sources/numerique/backup/cg_1.jpg",
-      "sources/numerique/backup/cg_2.jpg",
-      "sources/numerique/backup/cg_3.jpg",
-      "sources/numerique/backup/backup-02.jpg",
-      "sources/numerique/backup/cg_4.jpg",
-      "sources/numerique/backup/Intro.png",
-      "sources/numerique/backup/RS-07.jpg",
-      "sources/numerique/backup/user.jpg",
-      "sources/numerique/backup/backup-01.jpg"
-      
-    ]
-  },
-
     femmesnature: {
     title: "Femmes & nature",
     description: "Explorer les liens entre les affiches japonaises et européennes en mettant en évidence la manière dont elles abordent les thématiques de la nature et de la figure féminine, dans une expérience numérique.",
@@ -249,6 +229,26 @@ const projects = {
   ]
   },
 
+    backup: {
+    title: "Backup simulation",
+    description: "Simulation d'une expérience de backup pour un projet de design d'expérience utilisateur. L'objectif était de créer une interface intuitive et engageante qui guide les utilisateurs à travers le processus de sauvegarde de leurs données, tout en mettant en avant les avantages et les fonctionnalités du service proposé.",
+    gallery: [
+      "sources/numerique/backup/backup-03.jpg",
+      "sources/numerique/backup/backup-04.jpg",
+      "sources/numerique/backup/retour-ux2.png",
+      "sources/numerique/backup/cg_1.jpg",
+      "sources/numerique/backup/cg_2.jpg",
+      "sources/numerique/backup/cg_3.jpg",
+      "sources/numerique/backup/backup-02.jpg",
+      "sources/numerique/backup/cg_4.jpg",
+      "sources/numerique/backup/Intro.png",
+      "sources/numerique/backup/RS-07.jpg",
+      "sources/numerique/backup/user.jpg",
+      "sources/numerique/backup/backup-01.jpg"
+      
+    ]
+  },
+
   villenantes: {
     title: "Communication Quartier de Breil",
     description: "Diagnostic de communication pour le quartier de Breil, mise en page, stratégie de communication, gestion de projets avec la ville de Nantes",
@@ -257,6 +257,19 @@ const projects = {
       "sources/design/Villenantes/portada.jpg",
       "sources/design/Villenantes/carte.jpg",
       "sources/design/Villenantes/schema.jpg"
+    ]
+  },
+
+  alo: {
+    title: "Alo radio",
+    description: "Alo radio et une plateforme multimédia pensée pour valoriser et faire rayonner la culture des classes populaires au sein de la francophonie. Conçue pour les 20-38 ans, elle s’appuie sur une approche inclusive et participative afin de créer un espace d’échange culturel entre les francophones.",
+    gallery: [
+      "sources/numerique/aloradio/ecran.jpg",
+      "sources/numerique/aloradio/app.jpg",
+      "sources/numerique/aloradio/mockup.jpg",
+      "sources/numerique/aloradio/mood.jpg",
+      "sources/numerique/aloradio/web.jpg",
+      "sources/numerique/aloradio/motifs.jpg"
     ]
   }
 
@@ -326,7 +339,7 @@ const isNumeriquePage = window.location.pathname.includes("zoomprojdeux.html");
 
 // ordre des projets
 const projectOrder = isNumeriquePage
-  ? ["entreplomos","mht","osmoz","backup","femmesnature","locosporlatipo"]   // 👉 projets NUMÉRIQUE
+  ? ["entreplomos","mht","osmoz","backup","femmesnature","locosporlatipo","alo"]   // 👉 projets NUMÉRIQUE
   : ["cahr", "antigona", "edition", "museeor","paris8","pets","chronographe","miraflores","villenantes"]; // 👉 projets DESIGN
 
 const currentIndex = projectOrder.indexOf(project);
