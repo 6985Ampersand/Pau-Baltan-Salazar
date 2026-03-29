@@ -233,19 +233,20 @@ const projects = {
     title: "Backup simulation",
     description: "Simulation d'une expérience de backup pour un projet de design d'expérience utilisateur. L'objectif était de créer une interface intuitive et engageante qui guide les utilisateurs à travers le processus de sauvegarde de leurs données, tout en mettant en avant les avantages et les fonctionnalités du service proposé.",
     gallery: [
-      "sources/numerique/backup/backup-03.jpg",
-      "sources/numerique/backup/backup-04.jpg",
-      "sources/numerique/backup/retour-ux2.png",
-      "sources/numerique/backup/cg_1.jpg",
-      "sources/numerique/backup/cg_2.jpg",
-      "sources/numerique/backup/cg_3.jpg",
-      "sources/numerique/backup/backup-02.jpg",
-      "sources/numerique/backup/cg_4.jpg",
-      "sources/numerique/backup/Intro.png",
-      "sources/numerique/backup/RS-07.jpg",
+      "sources/numerique/backup/chambree.png",
+      "sources/numerique/backup/ecran.jpg",
+      "sources/numerique/backup/mockup.jpg",
+      "sources/numerique/backup/ecrand.jpg",
+      "sources/numerique/backup/identite.jpg",
+      "sources/numerique/backup/marque.jpg",
+      "sources/numerique/backup/mood.jpg",
+      "sources/numerique/backup/objets.png",
+      "sources/numerique/backup/ordi.jpg",
+      "sources/numerique/backup/personaje.gif",
       "sources/numerique/backup/user.jpg",
-      "sources/numerique/backup/backup-01.jpg"
-      
+      "sources/numerique/backup/ui.jpg",
+      "sources/numerique/backup/typo.jpg",
+      "sources/numerique/backup/promo.jpg"
     ]
   },
 
