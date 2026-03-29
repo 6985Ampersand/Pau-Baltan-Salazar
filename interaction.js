@@ -189,10 +189,14 @@ const projects = {
       "sources/numerique/backup/backup-02.jpg",
       "sources/numerique/backup/cg_4.jpg",
       "sources/numerique/backup/Intro.png",
+      "sources/numerique/backup/outro-5.gif",
       "sources/numerique/backup/RS-07.jpg",
       "sources/numerique/backup/user.jpg",
+      "sources/numerique/backup/personaje.gif",
       "sources/numerique/backup/backup-01.jpg",
       "sources/numerique/backup/mockup.jpg"
+
+      
     ]
   },
 
@@ -328,7 +332,7 @@ const isNumeriquePage = window.location.pathname.includes("zoomprojdeux.html");
 
 // ordre des projets
 const projectOrder = isNumeriquePage
-  ? ["mht", "entreplomos", "dreamz","backup","femmesnature","osmoz","locosporlatipo"]   // 👉 projets NUMÉRIQUE
+  ? ["entreplomos", "mht","osmoz","backup","femmesnature","locosporlatipo"]   // 👉 projets NUMÉRIQUE
   : ["cahr", "antigona", "edition", "museeor","paris8","pets","chronographe","miraflores","villenantes"]; // 👉 projets DESIGN
 
 const currentIndex = projectOrder.indexOf(project);
