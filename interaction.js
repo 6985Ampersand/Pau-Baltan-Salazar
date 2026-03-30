@@ -229,7 +229,25 @@ const projects = {
   ]
   },
 
-
+     backup: {
+    title: "Backup simulation",
+    description: "Simulation d'une expérience de backup pour un projet de design d'expérience utilisateur. L'objectif était de créer une interface intuitive et engageante qui guide les utilisateurs à travers le processus de sauvegarde de leurs données, tout en mettant en avant les avantages et les fonctionnalités du service proposé.",
+    gallery: [
+      "sources/numerique/backup/chambree.png",
+      "sources/numerique/backup/ecran.jpg",
+      "sources/numerique/backup/mockup.jpg",
+      "sources/numerique/backup/ecrand.jpg",
+      "sources/numerique/backup/identite.jpg",
+      "sources/numerique/backup/marque.jpg",
+      "sources/numerique/backup/mood.jpg",
+      "sources/numerique/backup/objets.png",
+      "sources/numerique/backup/ordi.jpg",
+      "sources/numerique/backup/user.jpg",
+      "sources/numerique/backup/ui.jpg",
+      "sources/numerique/backup/typo.jpg",
+      "sources/numerique/backup/promo.jpg"
+    ]
+  },
 
   villenantes: {
     title: "Communication Quartier de Breil",
