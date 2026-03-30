@@ -1,30 +1,39 @@
+/* =========================
+   HEADER SCROLL
+========================= */
 let lastScrollTop = 0;
 const header = document.querySelector("header");
 
-window.addEventListener("scroll", function() {
+window.addEventListener("scroll", function () {
   let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-  if (scrollTop < lastScrollTop) {
-    header.classList.add("nav-scrolled");
-  } else {
-    header.classList.remove("nav-scrolled");
+  if (header) {
+    if (scrollTop < lastScrollTop) {
+      header.classList.add("nav-scrolled");
+    } else {
+      header.classList.remove("nav-scrolled");
+    }
   }
 
   lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 });
 
 
-/* Lightbox pour la page d'accueil */
+/* =========================
+   LIGHTBOX
+========================= */
 const lightbox = document.getElementById("lightbox");
 const imageGrande = document.getElementById("imageGrande");
 const fermerBtn = document.querySelector(".fermer");
 const nextLightbox = document.querySelector(".next");
 const prevLightbox = document.querySelector(".prev");
-let galleryImages = Array.from(document.querySelectorAll(".galerie"));
+
+let galleryImages = [];
 let currentGalleryIndex = -1;
 
 function ouvrirLightbox(index) {
   if (!lightbox || !imageGrande || galleryImages.length === 0) return;
+
   currentGalleryIndex = index;
   imageGrande.src = galleryImages[currentGalleryIndex].src;
   lightbox.style.display = "flex";
@@ -37,21 +46,30 @@ function fermerLightbox() {
 
 function defilerLightbox(direction) {
   if (galleryImages.length === 0) return;
-  currentGalleryIndex = (currentGalleryIndex + direction + galleryImages.length) % galleryImages.length;
+
+  currentGalleryIndex =
+    (currentGalleryIndex + direction + galleryImages.length) %
+    galleryImages.length;
+
   imageGrande.src = galleryImages[currentGalleryIndex].src;
 }
 
-galleryImages.forEach((img, index) => {
-  img.addEventListener("click", () => ouvrirLightbox(index));
-});
-
+// événements lightbox
 if (fermerBtn) fermerBtn.addEventListener("click", fermerLightbox);
-if (lightbox) lightbox.addEventListener("click", (e) => { if (e.target === lightbox) fermerLightbox(); });
+
+if (lightbox) {
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) fermerLightbox();
+  });
+}
+
 if (nextLightbox) nextLightbox.addEventListener("click", () => defilerLightbox(1));
 if (prevLightbox) prevLightbox.addEventListener("click", () => defilerLightbox(-1));
 
 
-/* Project Zoom */
+/* =========================
+   PROJECT DATA
+========================= */
 const params = new URLSearchParams(window.location.search);
 const project = params.get("project");
 
@@ -78,14 +96,12 @@ const projects = {
       "sources/design/Editorial/Antigona/Antigona-3.jpg",
       "sources/design/Editorial/Antigona/Antigona-6.jpg",
       "sources/design/Editorial/Antigona/Antigona-portada.jpg"
-      
-            
     ]
   },
 
   edition: {
     title: "Montage expérimental",
-    description: "Montages d’œuvres d’art numériques réalisés comme exercice avec l’outil Photoshop. Le concept pose la question suivante : pourquoi ne pas mélanger des éléments dénués de sens avec quelque chose d’aussi classique que l’art ?",
+    description: "Montages d’œuvres d’art numériques réalisés comme exercice avec l’outil Photoshop...",
     gallery: [
       "sources/design/Edition images/Art m_Mesa de trabajo 1.jpg",
       "sources/design/Edition images/Art m-02.jpg",
@@ -93,10 +109,9 @@ const projects = {
     ]
   },
 
-
   paris8: {
     title: "Paris8 Branding",
-    description: "Branding pour l’Université Paris 8, réalisé comme exercice dans le cadre de la formation en création et édition numériques",
+    description: "Branding pour l’Université Paris 8...",
     gallery: [
       "sources/design/Branding/Paris8/guide.jpg",
       "sources/design/Branding/Paris8/Textures.jpg",
@@ -110,7 +125,7 @@ const projects = {
 
   pets: {
     title: "Pets Branding",
-    description: "Ce projet de marque a été réalisé afin de transmettre la qualité de vie offerte aux animaux par la nouvelle clinique vétérinaire Pet’s Company. Les couleurs ont été choisies pour refléter la chaleur humaine et le dynamisme du lieu.",
+    description: "Ce projet de marque a été réalisé afin de transmettre la qualité de vie offerte aux animaux...",
     gallery: [
       "sources/design/Branding/Pets-company/logo.jpg",
       "sources/design/Branding/Pets-company/charte.jpg",
@@ -124,7 +139,7 @@ const projects = {
 
   chronographe: {
     title: "Chronographe",
-    description: "Projet de design d'un outil de médiation pour le musée Chronographe",
+    description: "Projet de design d'un outil de médiation...",
     gallery: [
       "sources/design/Editorial/Chronographe/carte.jpg",
       "sources/design/Editorial/Chronographe/jeu.jpg",
@@ -133,36 +148,35 @@ const projects = {
       "sources/design/Editorial/Chronographe/portada.jpg",
       "sources/design/Editorial/Chronographe/pres.jpg"
     ]
-
   },
 
-      museeor: {
-      title: "Musée de l'or",
-      description: "Publications numériques pour le Musée de l'or de Bogota, en Colombie. Le projet comprend la création d'une série de publications numériques interactives qui mettent en valeur les collections du musée. Les publications sont conçues pour être accessibles sur différents appareils, offrant une expérience éducative aux visiteurs du musée.",
-      gallery: [
-        "sources/design/Musee_or/credits.jpg",
-        "sources/design/Musee_or/deux.jpg",
-        "sources/design/Musee_or/portrait.jpg",
-        "sources/design/Musee_or/pub.jpg",
-      ]
-    },
+  museeor: {
+    title: "Musée de l'or",
+    description: "Publications numériques pour le Musée de l'or de Bogota...",
+    gallery: [
+      "sources/design/Musee_or/credits.jpg",
+      "sources/design/Musee_or/deux.jpg",
+      "sources/design/Musee_or/portrait.jpg",
+      "sources/design/Musee_or/pub.jpg"
+    ]
+  },
 
-    miraflores: {
-      title: "Miraflores",
-      description: "Présentation numérique pour le travail final de licence en architecture communautaire participative",
-      gallery: [
-        "sources/design/miraflores/ligne.jpg",
-        "sources/design/miraflores/bleu.jpg",
-        "sources/design/miraflores/entrada.jpg",
-        "sources/design/miraflores/extrait.jpg",
-        "sources/design/miraflores/rose.jpg",
-        "sources/design/miraflores/portada.jpg"
-      ]
-    },
+  miraflores: {
+    title: "Miraflores",
+    description: "Présentation numérique...",
+    gallery: [
+      "sources/design/miraflores/ligne.jpg",
+      "sources/design/miraflores/bleu.jpg",
+      "sources/design/miraflores/entrada.jpg",
+      "sources/design/miraflores/extrait.jpg",
+      "sources/design/miraflores/rose.jpg",
+      "sources/design/miraflores/portada.jpg"
+    ]
+  },
 
-    mht: {
+  mht: {
     title: "MHT design",
-    description: "Adaptation d'un service : design graphique, stratégie de communication, diagnostic d’accessibilité et accessibilité numérique et UI design pour le site web du musée associatif Maison des Hommes et des Techniques. Signalétique et dispositifs d’accessibilité adaptés",
+    description: "Adaptation d'un service...",
     gallery: [
       "sources/numerique/mht/video.png",
       "sources/numerique/mht/MHT-01.jpg",
@@ -172,13 +186,12 @@ const projects = {
       "sources/numerique/mht/MHT-08.png",
       "sources/numerique/mht/MHT-02.jpg",
       "sources/numerique/mht/MHT-04.jpg"
-
     ]
   },
 
-    femmesnature: {
+  femmesnature: {
     title: "Femmes & nature",
-    description: "Explorer les liens entre les affiches japonaises et européennes en mettant en évidence la manière dont elles abordent les thématiques de la nature et de la figure féminine, dans une expérience numérique.",
+    description: "Explorer les liens entre les affiches...",
     gallery: [
       "sources/numerique/Femmes_nature/femmesn_couleurs.jpg",
       "sources/numerique/Femmes_nature/femmesn_dialogue.jpg",
@@ -192,46 +205,46 @@ const projects = {
   },
 
   locosporlatipo: {
-  title: "Locos por la tipo",
-  description: "Site pour le groupe de recherche « Locos por la tipo ». Création d'identité visuelle, mise à jour du site, réseaux sociaux.",
-  gallery: [
-    "sources/numerique/locosporlatipo/credits.jpg",
-    "sources/numerique/locosporlatipo/page_projets.jpg",
-    "sources/numerique/locosporlatipo/page_zoom.jpg",
-    "sources/numerique/locosporlatipo/scroll.png"
-  ]
-},
+    title: "Locos por la tipo",
+    description: "Site pour le groupe de recherche...",
+    gallery: [
+      "sources/numerique/locosporlatipo/credits.jpg",
+      "sources/numerique/locosporlatipo/page_projets.jpg",
+      "sources/numerique/locosporlatipo/page_zoom.jpg",
+      "sources/numerique/locosporlatipo/scroll.png"
+    ]
+  },
 
   entreplomos: {
-  title: "Entreplomos",
-  description: "Site web pour le projet Entre Plomos du Groupe de Recherche en Études Typographiques de l'Université du Cauca.",
-  gallery: [
-    "sources/numerique/entreplomos/machine.jpg",
-    "sources/numerique/entreplomos/tout.png",
-    "sources/numerique/entreplomos/portada.jpg",
-    "sources/numerique/entreplomos/violet.jpg",
-    "sources/numerique/entreplomos/invitation.png",
-    "sources/numerique/entreplomos/catalogue.png",
-    "sources/numerique/entreplomos/carateres.jpg"
-  ]
-},
+    title: "Entreplomos",
+    description: "Site web pour le projet...",
+    gallery: [
+      "sources/numerique/entreplomos/machine.jpg",
+      "sources/numerique/entreplomos/tout.png",
+      "sources/numerique/entreplomos/portada.jpg",
+      "sources/numerique/entreplomos/violet.jpg",
+      "sources/numerique/entreplomos/invitation.png",
+      "sources/numerique/entreplomos/catalogue.png",
+      "sources/numerique/entreplomos/carateres.jpg"
+    ]
+  },
 
   osmoz: {
     title: "Osmoz",
-    description: " Osmoz est une application de récits érotiques interactifs, une alternative de reappropriation de nos fantasmes et faite pour stimuler notre imaginaire érotique.",
-  gallery: [
-    "sources/numerique/Osmoz/Moodboard.jpeg",
-    "sources/numerique/Osmoz/ecrans.jpg",
-    "sources/numerique/Osmoz/livret.jpg",
-    "sources/numerique/Osmoz/pages.jpg",
-    "sources/numerique/Osmoz/portada.jpg",
-    "sources/numerique/Osmoz/vis.png"
-  ]
+    description: "Application de récits érotiques interactifs...",
+    gallery: [
+      "sources/numerique/Osmoz/Moodboard.jpeg",
+      "sources/numerique/Osmoz/ecrans.jpg",
+      "sources/numerique/Osmoz/livret.jpg",
+      "sources/numerique/Osmoz/pages.jpg",
+      "sources/numerique/Osmoz/portada.jpg",
+      "sources/numerique/Osmoz/vis.png"
+    ]
   },
 
-     backup: {
+  backup: {
     title: "Backup simulation",
-    description: "Simulation d'une expérience de backup pour un projet de design d'expérience utilisateur. L'objectif était de créer une interface intuitive et engageante qui guide les utilisateurs à travers le processus de sauvegarde de leurs données, tout en mettant en avant les avantages et les fonctionnalités du service proposé.",
+    description: "Simulation d'une expérience de backup...",
     gallery: [
       "sources/numerique/backup/chambree.png",
       "sources/numerique/backup/ecran.jpg",
@@ -251,7 +264,7 @@ const projects = {
 
   villenantes: {
     title: "Communication Quartier de Breil",
-    description: "Diagnostic de communication pour le quartier de Breil, mise en page, stratégie de communication, gestion de projets avec la ville de Nantes",
+    description: "Diagnostic de communication...",
     gallery: [
       "sources/design/Villenantes/pages.jpg",
       "sources/design/Villenantes/portada.jpg",
@@ -262,7 +275,7 @@ const projects = {
 
   alo: {
     title: "Alo radio",
-    description: "Alo radio et une plateforme multimédia pensée pour valoriser et faire rayonner la culture des classes populaires au sein de la francophonie. Conçue pour les 20-38 ans, elle s’appuie sur une approche inclusive et participative afin de créer un espace d’échange culturel entre les francophones.",
+    description: "Plateforme multimédia...",
     gallery: [
       "sources/numerique/aloradio/ecran.jpg",
       "sources/numerique/aloradio/app.png",
@@ -276,104 +289,81 @@ const projects = {
 };
 
 
-// 🔒 sécurité AVANT tout
-if (!projects[project]) {
-  document.getElementById("project-title").textContent = "Projet introuvable";
-} else {
+/* =========================
+   PROJECT DISPLAY
+========================= */
+const titleEl = document.getElementById("project-title");
+const descEl = document.getElementById("project-description");
+const galleryContainer = document.getElementById("project-gallery");
 
-  // titre + description
-  document.getElementById("project-title").textContent = projects[project].title;
-  const projectDescription = document.getElementById("project-description");
-  projectDescription.innerHTML = "";
-  const descriptionText = projects[project].description || "";
-  const urlRegex = /(https?:\/\/[^\s]+)/g;
-  let lastIndex = 0;
-  let match;
+if (project && titleEl && descEl && galleryContainer) {
 
-  while ((match = urlRegex.exec(descriptionText)) !== null) {
-    if (match.index > lastIndex) {
-      projectDescription.appendChild(document.createTextNode(descriptionText.slice(lastIndex, match.index)));
-    }
-    const url = match[0];
-    const linkEl = document.createElement("a");
-    linkEl.href = url;
-    linkEl.target = "_blank";
-    linkEl.rel = "noopener noreferrer";
-    linkEl.textContent = url;
-    projectDescription.appendChild(linkEl);
-    lastIndex = match.index + url.length;
+  if (!projects[project]) {
+    titleEl.textContent = "Projet introuvable";
+  } else {
+
+    titleEl.textContent = projects[project].title;
+    descEl.textContent = projects[project].description || "";
+
+    galleryContainer.innerHTML = "";
+
+    projects[project].gallery.forEach((imgSrc, index) => {
+      const img = document.createElement("img");
+      img.src = imgSrc;
+      img.alt = projects[project].title;
+      img.classList.add("galerie");
+
+      galleryContainer.appendChild(img);
+    });
+
+    galleryImages = Array.from(document.querySelectorAll("#project-gallery img"));
+
+    galleryImages.forEach((img, index) => {
+      img.addEventListener("click", () => ouvrirLightbox(index));
+    });
   }
-
-  if (lastIndex < descriptionText.length) {
-    projectDescription.appendChild(document.createTextNode(descriptionText.slice(lastIndex)));
-  }
-
-  if (projects[project].link) {
-    projectDescription.appendChild(document.createElement("br"));
-    const linkEl = document.createElement("a");
-    linkEl.href = projects[project].link;
-    linkEl.target = "_blank";
-    linkEl.rel = "noopener noreferrer";
-    linkEl.textContent = projects[project].linkLabel || projects[project].link;
-    projectDescription.appendChild(linkEl);
-  }
-
-  // galerie
-  const galleryContainer = document.getElementById("project-gallery");
-  galleryContainer.innerHTML = "";
-
-  projects[project].gallery.forEach(imgSrc => {
-    const img = document.createElement("img");
-    img.src = imgSrc;
-    img.alt = projects[project].title;
-
-    galleryContainer.appendChild(img);
-  });
-
 }
 
-/* Navigation entre les projets */
 
-// détecter la page actuelle
+/* =========================
+   NAVIGATION PROJETS
+========================= */
 const isNumeriquePage = window.location.pathname.includes("zoomprojdeux.html");
 
-// ordre des projets
 const projectOrder = isNumeriquePage
-  ? ["entreplomos","mht","osmoz","backup","femmesnature","locosporlatipo","alo"]   // 👉 projets NUMÉRIQUE
-  : ["cahr", "antigona", "edition", "museeor","paris8","pets","chronographe","miraflores","villenantes"]; // 👉 projets DESIGN
+  ? ["entreplomos","mht","osmoz","backup","femmesnature","locosporlatipo","alo"]
+  : ["cahr","antigona","edition","museeor","paris8","pets","chronographe","miraflores","villenantes"];
 
 const currentIndex = projectOrder.indexOf(project);
 
 const prevBtn = document.getElementById("prev-project");
 const nextBtn = document.getElementById("next-project");
 
-if (currentIndex !== -1) {
+if (currentIndex !== -1 && prevBtn && nextBtn) {
 
-    // précédent
-    if (currentIndex > 0) {
-        const prevProject = projectOrder[currentIndex - 1];
-        prevBtn.href = isNumeriquePage
-            ? `zoomprojdeux.html?project=${prevProject}`
-            : `zoomproj.html?project=${prevProject}`;
-        prevBtn.textContent = "← Projet précédent";
-    } else {
-        prevBtn.style.display = "none";
-    }
+  if (currentIndex > 0) {
+    const prevProject = projectOrder[currentIndex - 1];
+    prevBtn.href = isNumeriquePage
+      ? `zoomprojdeux.html?project=${prevProject}`
+      : `zoomproj.html?project=${prevProject}`;
+  } else {
+    prevBtn.style.display = "none";
+  }
 
-    // suivant
-    if (currentIndex < projectOrder.length - 1) {
-        const nextProject = projectOrder[currentIndex + 1];
-        nextBtn.href = isNumeriquePage
-            ? `zoomprojdeux.html?project=${nextProject}`
-            : `zoomproj.html?project=${nextProject}`;
-        nextBtn.textContent = "Projet suivant →";
-    } else {
-        nextBtn.style.display = "none";
-    }
-
+  if (currentIndex < projectOrder.length - 1) {
+    const nextProject = projectOrder[currentIndex + 1];
+    nextBtn.href = isNumeriquePage
+      ? `zoomprojdeux.html?project=${nextProject}`
+      : `zoomproj.html?project=${nextProject}`;
+  } else {
+    nextBtn.style.display = "none";
+  }
 }
 
-/* menu mobile*/
+
+/* =========================
+   MENU MOBILE
+========================= */
 const toggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
 
