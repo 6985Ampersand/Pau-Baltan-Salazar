@@ -247,11 +247,11 @@ const projects = {
     description: "Alo radio et une plateforme multimédia pensée pour valoriser et faire rayonner la culture des classes populaires au sein de la francophonie. Conçue pour les 20-38 ans, elle s’appuie sur une approche inclusive et participative afin de créer un espace d’échange culturel entre les francophones.",
     gallery: [
       "sources/numerique/aloradio/ecran.jpg",
-      "sources/numerique/aloradio/app.jpg",
+      "sources/numerique/aloradio/app.png",
       "sources/numerique/aloradio/mockup.jpg",
       "sources/numerique/aloradio/mood.jpg",
       "sources/numerique/aloradio/web.jpg",
-      "sources/numerique/aloradio/motifs.jpg"
+      "sources/numerique/aloradio/motifs.png"
     ]
   }
 
