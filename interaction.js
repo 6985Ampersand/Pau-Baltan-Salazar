@@ -370,3 +370,7 @@ if (toggle && navLinks) {
     navLinks.classList.toggle("active");
   });
 }
+
+console.log("project:", project);
+console.log("data:", projects[project]);
+
