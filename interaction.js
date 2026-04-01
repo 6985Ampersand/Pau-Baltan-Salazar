@@ -184,7 +184,7 @@ const projects = {
       "sources/numerique/mht/MHT-09.png",
       "sources/numerique/mht/MHT-05.jpg",
       "sources/numerique/mht/MHT-08.png",
-      "sources/numerique/mht/MHT-02.jpg",
+      "sources/numerique/mht/MHT-02.png",
       "sources/numerique/mht/MHT-04.jpg"
     ]
   },
@@ -271,6 +271,21 @@ const projects = {
     description: "Simulation en ligne",
     gallery: [
       "sources/numerique/sasha/mockup.jpg",
+      "sources/numerique/sasha/boite.gif",
+      "sources/numerique/sasha/ecran.jpg",
+      "sources/numerique/sasha/autre.jpg",
+      "sources/numerique/sasha/chambre_jeu.png",
+      "sources/numerique/sasha/couleur.jpg",
+      "sources/numerique/sasha/user.jpg",
+      "sources/numerique/sasha/identite.jpg",
+      "sources/numerique/sasha/intro.png",
+      "sources/numerique/sasha/pub.jpg",
+      "sources/numerique/sasha/mockup.jpg",
+      "sources/numerique/sasha/ui.jpg",
+      "sources/numerique/sasha/logo.jpg",
+      "sources/numerique/sasha/objets.png",
+      "sources/numerique/sasha/ordi.jpg",
+      "sources/numerique/sasha/typo.jpg"
     ]
   }
 
@@ -316,34 +331,74 @@ if (project && titleEl && descEl && galleryContainer) {
 /* =========================
    NAVIGATION PROJETS
 ========================= */
-const isNumeriquePage = window.location.pathname.includes("zoomprojdeux.html");
+const isZoomProjetDeux = window.location.pathname.includes("zoomprojdeux.html");
 
-const projectOrder = isNumeriquePage
-  ? ["entreplomos","mht","osmoz","backup","femmesnature","locosporlatipo","alo"]
-  : ["cahr","antigona","edition","museeor","paris8","pets","chronographe","miraflores","villenantes"];
+const numeriqueProjectOrder = [
+  "entreplomos",
+  "mht",
+  "osmoz",
+  "sasha",
+  "femmesnature",
+  "locosporlatipo",
+  "alo"
+];
+
+const designProjectOrder = [
+  "cahr",
+  "antigona",
+  "edition",
+  "paris8",
+  "pets",
+  "chronographe",
+  "miraflores",
+  "villenantes"
+];
+
+const zoomDeuxDesignProjectOrder = ["museeor"];
+
+let projectOrder;
+if (isZoomProjetDeux) {
+  if (numeriqueProjectOrder.includes(project)) {
+    projectOrder = numeriqueProjectOrder;
+  } else if (zoomDeuxDesignProjectOrder.includes(project)) {
+    projectOrder = zoomDeuxDesignProjectOrder;
+  } else {
+    projectOrder = [];
+  }
+} else {
+  projectOrder = designProjectOrder;
+}
 
 const currentIndex = projectOrder.indexOf(project);
 
 const prevBtn = document.getElementById("prev-project");
 const nextBtn = document.getElementById("next-project");
 
-if (currentIndex !== -1 && prevBtn && nextBtn) {
+if (prevBtn && nextBtn) {
+  if (currentIndex !== -1) {
+    if (currentIndex > 0) {
+      const prevProject = projectOrder[currentIndex - 1];
+      prevBtn.href = isZoomProjetDeux
+        ? `zoomprojdeux.html?project=${prevProject}`
+        : `zoomproj.html?project=${prevProject}`;
+      prevBtn.textContent = "← Projet précédent";
+      prevBtn.title = "Projet précédent";
+    } else {
+      prevBtn.style.display = "none";
+    }
 
-  if (currentIndex > 0) {
-    const prevProject = projectOrder[currentIndex - 1];
-    prevBtn.href = isNumeriquePage
-      ? `zoomprojdeux.html?project=${prevProject}`
-      : `zoomproj.html?project=${prevProject}`;
+    if (currentIndex < projectOrder.length - 1) {
+      const nextProject = projectOrder[currentIndex + 1];
+      nextBtn.href = isZoomProjetDeux
+        ? `zoomprojdeux.html?project=${nextProject}`
+        : `zoomproj.html?project=${nextProject}`;
+      nextBtn.textContent = "Projet suivant →";
+      nextBtn.title = "Projet suivant";
+    } else {
+      nextBtn.style.display = "none";
+    }
   } else {
     prevBtn.style.display = "none";
-  }
-
-  if (currentIndex < projectOrder.length - 1) {
-    const nextProject = projectOrder[currentIndex + 1];
-    nextBtn.href = isNumeriquePage
-      ? `zoomprojdeux.html?project=${nextProject}`
-      : `zoomproj.html?project=${nextProject}`;
-  } else {
     nextBtn.style.display = "none";
   }
 }
