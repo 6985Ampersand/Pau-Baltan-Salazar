@@ -264,6 +264,14 @@ const projects = {
       "sources/numerique/aloradio/web.jpg",
       "sources/numerique/aloradio/motifs.png"
     ]
+  },
+
+  sasha: {
+    title: "Sasha-backup simulation",
+    description: "Simulation en ligne",
+    gallery: [
+      "sources/numerique/sasha/mockup.jpg",
+    ]
   }
 
 };
