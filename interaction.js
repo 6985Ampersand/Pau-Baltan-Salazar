@@ -371,6 +371,3 @@ if (toggle && navLinks) {
   });
 }
 
-console.log("project:", project);
-console.log("data:", projects[project]);
-
