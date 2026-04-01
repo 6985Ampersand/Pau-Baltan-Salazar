@@ -968,7 +968,27 @@ a:hover {
     width: 100%;
   }
 
+  header nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-links {
+    width: 100%;              /* prend toute la largeur */
+    flex-direction: column;   /* passe en colonne */
+    align-items: center;      /* centre les liens */
+    gap: 10px;                /* espace entre les liens */
+    padding: 0;
+  }
+
+  .nav-links li {
+    font-size: 18px;
+    text-align: center;
+  }
+
 }
+
 
   header {
     width: 100%;
@@ -994,7 +1014,7 @@ a:hover {
     line-height: normal;
   }
 
-  h1.designedby {
+  .designedby {
     color: #000;
     font-family: Syne;
     font-size: 13px;
@@ -1071,10 +1091,6 @@ a:hover {
         line-height: normal;
       }
       
-}
-
-
-
 
 /* Très petit écran */
 @media screen and (max-width: 480px) {
