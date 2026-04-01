@@ -940,7 +940,36 @@ a:hover {
 
 
 
-@media screen and (max-width: 768) {
+@media screen and (max-width: 768px) {
+    footer {
+    padding: 40px 20px; /* moins de marge sur mobile */
+  }
+
+  .footer {
+    flex-direction: column; /* empile les blocs */
+    align-items: flex-start; /* aligne à gauche */
+    gap: 30px; /* espace entre les blocs */
+    font-size: 24px; /* réduit taille globale */
+  }
+
+  .footer h2 {
+    font-size: 24px;
+  }
+
+  .footer h3 {
+    font-size: 18px;
+  }
+
+  .footer a {
+    font-size: 18px;
+  }
+
+  .footer-droite {
+    width: 100%;
+  }
+
+}
+
   header {
     width: 100%;
     padding: 20px;
@@ -1047,4 +1076,25 @@ a:hover {
 
 
 
-@media screen and (max-width: 480) {}
+/* Très petit écran */
+@media screen and (max-width: 480px) {
+
+  footer {
+    padding: 30px 15px;
+  }
+
+  .footer {
+    font-size: 20px;
+    gap: 20px;
+  }
+
+  .footer h2 {
+    font-size: 20px;
+  }
+
+  .footer h3,
+  .footer a {
+    font-size: 16px;
+  }
+
+}

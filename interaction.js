@@ -184,7 +184,7 @@ const projects = {
       "sources/numerique/mht/MHT-09.png",
       "sources/numerique/mht/MHT-05.jpg",
       "sources/numerique/mht/MHT-08.png",
-      "sources/numerique/mht/MHT-02.png",
+      "sources/numerique/mht/MHT-02.jpg",
       "sources/numerique/mht/MHT-04.jpg"
     ]
   },
@@ -258,7 +258,7 @@ const projects = {
     description: "Plateforme multimédia...",
     gallery: [
       "sources/numerique/aloradio/ecran.jpg",
-      "sources/numerique/aloradio/app.png",
+      "sources/numerique/aloradio/mock.png",
       "sources/numerique/aloradio/mockup.jpg",
       "sources/numerique/aloradio/mood.jpg",
       "sources/numerique/aloradio/web.jpg",
@@ -278,9 +278,8 @@ const projects = {
       "sources/numerique/sasha/couleur.jpg",
       "sources/numerique/sasha/user.jpg",
       "sources/numerique/sasha/identite.jpg",
-      "sources/numerique/sasha/intro.png",
+      "sources/numerique/sasha/Intro.png",
       "sources/numerique/sasha/pub.jpg",
-      "sources/numerique/sasha/mockup.jpg",
       "sources/numerique/sasha/ui.jpg",
       "sources/numerique/sasha/logo.jpg",
       "sources/numerique/sasha/objets.png",
