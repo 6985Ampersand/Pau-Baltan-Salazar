@@ -940,56 +940,7 @@ a:hover {
 
 
 
-@media screen and (max-width: 768px) {
-    footer {
-    padding: 40px 20px; /* moins de marge sur mobile */
-  }
-
-  .footer {
-    flex-direction: column; /* empile les blocs */
-    align-items: flex-start; /* aligne à gauche */
-    gap: 30px; /* espace entre les blocs */
-    font-size: 24px; /* réduit taille globale */
-  }
-
-  .footer h2 {
-    font-size: 24px;
-  }
-
-  .footer h3 {
-    font-size: 18px;
-  }
-
-  .footer a {
-    font-size: 18px;
-  }
-
-  .footer-droite {
-    width: 100%;
-  }
-
-  header nav {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .nav-links {
-    width: 100%;              /* prend toute la largeur */
-    flex-direction: column;   /* passe en colonne */
-    align-items: center;      /* centre les liens */
-    gap: 10px;                /* espace entre les liens */
-    padding: 0;
-  }
-
-  .nav-links li {
-    font-size: 18px;
-    text-align: center;
-  }
-
-}
-
-
+@media screen and (max-width: 768) {
   header {
     width: 100%;
     padding: 20px;
@@ -1014,7 +965,7 @@ a:hover {
     line-height: normal;
   }
 
-  .designedby {
+  h1.designedby {
     color: #000;
     font-family: Syne;
     font-size: 13px;
@@ -1091,26 +1042,9 @@ a:hover {
         line-height: normal;
       }
       
-
-/* Très petit écran */
-@media screen and (max-width: 480px) {
-
-  footer {
-    padding: 30px 15px;
-  }
-
-  .footer {
-    font-size: 20px;
-    gap: 20px;
-  }
-
-  .footer h2 {
-    font-size: 20px;
-  }
-
-  .footer h3,
-  .footer a {
-    font-size: 16px;
-  }
-
 }
+
+
+
+
+@media screen and (max-width: 480) {}
