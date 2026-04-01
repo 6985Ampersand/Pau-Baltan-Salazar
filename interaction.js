@@ -242,24 +242,6 @@ const projects = {
     ]
   },
 
-  backup: {
-    title: "Backup simulation",
-    description: "Simulation d'une expérience de backup...",
-    gallery: [
-      "sources/numerique/backup/ecran.jpg",
-      "sources/numerique/backup/mockup.jpg",
-      "sources/numerique/backup/ecrand.jpg",
-      "sources/numerique/backup/identite.jpg",
-      "sources/numerique/backup/marque.jpg",
-      "sources/numerique/backup/mood.jpg",
-      "sources/numerique/backup/ordi.jpg",
-      "sources/numerique/backup/user.jpg",
-      "sources/numerique/backup/ui.jpg",
-      "sources/numerique/backup/typo.jpg",
-      "sources/numerique/backup/promo.jpg"
-    ]
-  },
-
   villenantes: {
     title: "Communication Quartier de Breil",
     description: "Diagnostic de communication...",
