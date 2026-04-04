@@ -88,7 +88,7 @@ const projects = {
 
   antigona: {
     title: "Antígona Tropical",
-    description: "Projet éditorial Antígona.",
+    description: "Projet éditorial Antígona pour la thèse de licence de l'artiste pplastique Richard Bravo.",
     gallery: [
       "sources/design/Editorial/Antigona/Antigona-4.jpg",
       "sources/design/Editorial/Antigona/Antigona-2.jpg", 
@@ -111,7 +111,7 @@ const projects = {
 
   paris8: {
     title: "Paris8 Branding",
-    description: "Branding pour l’Université Paris 8...",
+    description: "Refonte du logo de l'Université Paris 8 comme un exercice de marque.",
     gallery: [
       "sources/design/Branding/Paris8/guide.jpg",
       "sources/design/Branding/Paris8/Textures.jpg",
@@ -125,7 +125,7 @@ const projects = {
 
   pets: {
     title: "Pets Branding",
-    description: "Ce projet de marque a été réalisé afin de transmettre la qualité de vie offerte aux animaux...",
+    description: "Ce projet de marque a été réalisé afin de transmettre la qualité de vie offerte aux animaux et leur proximité à l'humain.",
     gallery: [
       "sources/design/Branding/Pets-company/logo.jpg",
       "sources/design/Branding/Pets-company/charte.jpg",
@@ -139,7 +139,7 @@ const projects = {
 
   chronographe: {
     title: "Chronographe",
-    description: "Projet de design d'un outil de médiation...",
+    description: "Projet de design d'un outil de médiation pour le musée Chronographe. Le projet comprend un tableau de jeu, un jeu de cartes, une liste d'activités, une affiche et une présentation numérique.",
     gallery: [
       "sources/design/Editorial/Chronographe/carte.jpg",
       "sources/design/Editorial/Chronographe/jeu.jpg",
@@ -152,7 +152,7 @@ const projects = {
 
   museeor: {
     title: "Musée de l'or",
-    description: "Publications numériques pour le Musée de l'or de Bogota...",
+    description: "Publications numériques pour le Musée de l'or de Bogota, en Colombie. Le projet comprend une série de publications pour les réseaux sociaux.",
     gallery: [
       "sources/design/Musee_or/credits.jpg",
       "sources/design/Musee_or/deux.jpg",
@@ -163,7 +163,7 @@ const projects = {
 
   miraflores: {
     title: "Miraflores",
-    description: "Présentation numérique...",
+    description: "Présentation numérique pour Lina, pour sa présentation finale de licence en architecture communautaire participative",
     gallery: [
       "sources/design/miraflores/ligne.jpg",
       "sources/design/miraflores/bleu.jpg",
@@ -176,7 +176,7 @@ const projects = {
 
   mht: {
     title: "MHT design",
-    description: "Adaptation d'un service...",
+    description: "Diagnostic d'accessibilité et accessibilité numérique en lien avec la communication, pour le musée associatif Maison des Hommes et des techniques. Signalétique et accessibilité en adaptation.",
     gallery: [
       "sources/numerique/mht/video.png",
       "sources/numerique/mht/MHT-01.jpg",
@@ -191,7 +191,7 @@ const projects = {
 
   femmesnature: {
     title: "Femmes & nature",
-    description: "Explorer les liens entre les affiches...",
+    description: "L’objectif de ce projet est d’explorer les liens entre les affiches japonaises et européennes en mettant en évidence la manière dont elles abordent les thématiques de la nature et de la figure féminine.",
     gallery: [
       "sources/numerique/Femmes_nature/femmesn_couleurs.jpg",
       "sources/numerique/Femmes_nature/femmesn_dialogue.jpg",
@@ -206,7 +206,7 @@ const projects = {
 
   locosporlatipo: {
     title: "Locos por la tipo",
-    description: "Site pour le groupe de recherche...",
+    description: "Site pour le groupe de recherche Locos por latipo dans lequel on peut trouver les différents projets réalisés par le groupe, ainsi que des ressources et des références sur la typographie. Le projet comprend une page d'accueil, une page de projets, une page de zoom sur un projet et une page de ressources.",
     gallery: [
       "sources/numerique/locosporlatipo/credits.jpg",
       "sources/numerique/locosporlatipo/page_projets.jpg",
@@ -217,7 +217,7 @@ const projects = {
 
   entreplomos: {
     title: "Entreplomos",
-    description: "Site web pour le projet...",
+    description: "Site web pour le projet Entre Plomos du Groupe de Recherche en Études Typographiques de l'Université du Cauca.",
     gallery: [
       "sources/numerique/entreplomos/machine.jpg",
       "sources/numerique/entreplomos/tout.png",
@@ -231,7 +231,7 @@ const projects = {
 
   osmoz: {
     title: "Osmoz",
-    description: "Application de récits érotiques interactifs...",
+    description: "Osmoz est une application de récits érotiques interactifs, pensée pour élargir le champs de ses fantasmes et désirs, stimuler son imaginaire, découvrir son corps et s’éduquer à son plaisir, de manière récréative, afin de vivre des moments d’intimité jouissifs et de développer une sexualité libre et épanouie.",
     gallery: [
       "sources/numerique/Osmoz/Moodboard.jpeg",
       "sources/numerique/Osmoz/ecrans.jpg",
@@ -244,7 +244,7 @@ const projects = {
 
   villenantes: {
     title: "Communication Quartier de Breil",
-    description: "Diagnostic de communication...",
+    description: "Diagnostic de communication pour le quartier de Breil à Nantes, en France. Le projet comprend une série de propositions de communication pour le quartier établis à partir de la recherche avec les habitants, ainsi que des recommandations pour la mise en œuvre de ces propositions.",
     gallery: [
       "sources/design/Villenantes/pages.jpg",
       "sources/design/Villenantes/portada.jpg",
@@ -255,7 +255,7 @@ const projects = {
 
   alo: {
     title: "Alo radio",
-    description: "Plateforme multimédia...",
+    description: "Alo radio est une plateforme multimédia pensée pour valoriser et faire rayonner la culture des classes populaires au sein de la francophonie.",
     gallery: [
       "sources/numerique/aloradio/ecran.jpg",
       "sources/numerique/aloradio/mock.png",
@@ -267,8 +267,8 @@ const projects = {
   },
 
   sasha: {
-    title: "Sasha-backup simulation",
-    description: "Simulation en ligne",
+    title: "Backup simulation",
+    description: "À travers une simulation narrative interactive, le public est invité à suivre et même à se mettre à la place d’un personnage qui est chargé de s’occuper des actifs numériques de sa meilleure amie récemment décédée. Cette histoire permet aux joueurs d’explorer, de manière engageante et accessible, les enjeux émotionnels, éthiques et juridiques liés à la gestion des données et de l’identité numérique d’une personne décédée.Le projet combine une réflexion philosophique sur l’identité, le soi et la mémoire avec des connaissances pratiques portant sur les droits, les responsabilités et les solutions existantes.",
     gallery: [
       "sources/numerique/sasha/mockup.jpg",
       "sources/numerique/sasha/boite.gif",
