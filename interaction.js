@@ -174,6 +174,14 @@ const projects = {
     ]
   },
 
+  laureat: {
+    title: "Espace lauréat- SEMSIRH",
+    description: "Refonte de l'espace lauréat pour l'accès au corps du personnel de direction et d'inspection. Travail de design d'interfaces et d'UX design",
+    gallery: [
+      "sources/numerique/laureat/portada.jpg",
+    ]
+  }
+
   mht: {
     title: "MHT design",
     description: "Diagnostic d'accessibilité et accessibilité numérique en lien avec la communication, pour le musée associatif Maison des Hommes et des techniques. Signalétique et accessibilité en adaptation.",
@@ -333,6 +341,7 @@ if (project && titleEl && descEl && galleryContainer) {
 const isZoomProjetDeux = window.location.pathname.includes("zoomprojdeux.html");
 
 const numeriqueProjectOrder = [
+  "laureat",
   "entreplomos",
   "mht",
   "osmoz",
