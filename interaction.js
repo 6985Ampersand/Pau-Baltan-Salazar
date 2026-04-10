@@ -193,7 +193,8 @@ const projects = {
       "sources/numerique/semsirh/mprh/flow.jpg",
       "sources/numerique/semsirh/mprh/interno.jpg",
       "sources/numerique/semsirh/mprh/identite.jpg",
-      "sources/numerique/semsirh/mprh/identitedeux.jpg"
+      "sources/numerique/semsirh/mprh/identitedeux.jpg",
+      "sources/numerique/semsirh/mprh/charte.jpg"
     ]
   },
 
