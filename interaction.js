@@ -178,9 +178,24 @@ const projects = {
     title: "Espace lauréat- SEMSIRH",
     description: "Refonte de l'espace lauréat pour l'accès au corps du personnel de direction et d'inspection. Travail de design d'interfaces et d'UX design",
     gallery: [
-      "sources/numerique/laureat/portada.jpg",
+      "sources/numerique/semsirh/laureat/ecrans-05.jpg",
+      "sources/numerique/semsirh/laureat/ecrans-03.jpg",
+      "sources/numerique/semsirh/laureat/ecrans-02.jpg",
+      "sources/numerique/semsirh/laureat/ecrans-04.jpg"
     ]
-  }
+  },
+
+  mprh: {
+    title: "Mon portail RH: portail unique des systèmes d'information RH",
+    description: "Design du portail unique des systèmes d'information RH pour le Service de Modernisation des Systèmes d'Information des Ressources Humaines. Travail de design d'interfaces et d'UX design",
+    gallery: [
+      "sources/numerique/semsirh/mprh/portada.jpg",
+      "sources/numerique/semsirh/mprh/flow.jpg",
+      "sources/numerique/semsirh/mprh/interno.jpg",
+      "sources/numerique/semsirh/mprh/identite.jpg",
+      "sources/numerique/semsirh/mprh/identitedeux.jpg"
+    ]
+  },
 
   mht: {
     title: "MHT design",
@@ -352,6 +367,7 @@ const numeriqueProjectOrder = [
 ];
 
 const designProjectOrder = [
+  "mprh",
   "cahr",
   "antigona",
   "edition",
