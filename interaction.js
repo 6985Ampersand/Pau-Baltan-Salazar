@@ -282,11 +282,13 @@ const projects = {
     description: "Alo radio est une plateforme multimédia pensée pour valoriser et faire rayonner la culture des classes populaires au sein de la francophonie.",
     gallery: [
       "sources/numerique/aloradio/ecran.jpg",
+      "sources/numerique/aloradio/des.jpg",
       "sources/numerique/aloradio/mock.png",
       "sources/numerique/aloradio/mockup.jpg",
       "sources/numerique/aloradio/mood.jpg",
       "sources/numerique/aloradio/web.jpg",
-      "sources/numerique/aloradio/motifs.png"
+      "sources/numerique/aloradio/motifs.png",
+      "sources/numerique/aloradio/zoom.jpg"
     ]
   },
 
