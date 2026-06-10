@@ -174,6 +174,18 @@ const projects = {
     ]
   },
 
+    femmes: {
+    title: "Les femmes dans l'industrie",
+    description: "Les femmes dans l'industrie: contenu interactif pour la Maison des Hommes et des Techniques, musée associatif à Nantes.",
+    gallery: [
+      "sources/numerique/mht_musee/ex1.jpg",
+      "sources/numerique/mht_musee/explication.png",
+      "sources/numerique/mht_musee/manif.png",
+      "sources/numerique/mht_musee/accueil.png",
+      "sources/numerique/mht_musee/deux.jpg"
+    ]
+  },
+
   laureat: {
     title: "Espace lauréat- SEMSIRH",
     description: "Refonte de l'espace lauréat pour l'accès au corps du personnel de direction et d'inspection. Travail de design d'interfaces et d'UX design",
@@ -279,7 +291,8 @@ const projects = {
 
   alo: {
     title: "Alo radio",
-    description: "Alo radio est une plateforme multimédia pensée pour valoriser et faire rayonner la culture des classes populaires au sein de la francophonie.",
+    description: 
+    "Alo radio est une plateforme multimédia pensée pour valoriser et faire rayonner la culture des classes populaires au sein de la francophonie.",
     gallery: [
       "sources/numerique/aloradio/ecran.jpg",
       "sources/numerique/aloradio/des.jpg",
@@ -296,6 +309,9 @@ const projects = {
     title: "Backup simulation",
     description: "À travers une simulation narrative interactive, le public est invité à suivre et même à se mettre à la place d’un personnage qui est chargé de s’occuper des actifs numériques de sa meilleure amie récemment décédée. Cette histoire permet aux joueurs d’explorer, de manière engageante et accessible, les enjeux émotionnels, éthiques et juridiques liés à la gestion des données et de l’identité numérique d’une personne décédée.Le projet combine une réflexion philosophique sur l’identité, le soi et la mémoire avec des connaissances pratiques portant sur les droits, les responsabilités et les solutions existantes.",
     gallery: [
+      "sources/numerique/sasha/backup-05.jpg",
+      "sources/numerique/sasha/backup-06.jpg",
+      "sources/numerique/sasha/backup-07.jpg",
       "sources/numerique/sasha/mockup.jpg",
       "sources/numerique/sasha/boite.gif",
       "sources/numerique/sasha/ecran.jpg",
