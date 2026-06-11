@@ -13,37 +13,41 @@
     <header>
         <nav class="navbar">
             <a href="index.html" id="PB" title="Accueil">@PB</a>
+            <h1 class="designedby">
+                Designed by<br>
+                Paula Baltán Salazar
+            </h1>
             <ul class="nav-links">
                 <li><a href="numerique.html">PRODUCT DESIGN</a></li>
                 <li><a href="design.html">DESIGN GRAPHIQUE</a></li>
                 <li><a href="contact.html">À PROPOS
                 </a></li>
             </ul>
-            <h1 class="designedby">
-                <br>Designed by <br>
-                Paula Baltán Salazar</h1>
+            
         </nav>
     </header>
 
 
 <section id="Texteintro">
-    <div class="Nom">
-    <img src="sources/titulo-24.jpg" alt="Mot Design" class="mot-design">
+  <div class="hero-container">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="hero-eyebrow">Product design | Design graphique</p>
+        <h1 class="hero-title">Je conçois des expériences numériques visuelles</h1>
+        <p class="hero-description">avec un approche centrée utilisateurs, ergonomie et accessibilité</p>
+      </div>
+      <div class="hero-image">
+        <img src="sources/numerique/mht_musee/ex1.jpg" alt="Portfolio preview">
+      </div>
     </div>
-    <ul class="left">
-            <h2 class="txtentree">
-            JE CONÇOIS DES EXPÉRIENCES NUMÉRIQUES
-            DU DESIGN GRAPHIQUE AUX INTERFACES, AVEC UN APPROCHE CENTRÉE SUR L'UTILISATEUR,
-            L'ERGONOMIE ET L'ACCESSIBILITÉ
-        </h2>
-    </ul>
+  </div>
 
     <!-- Bouton Commencer -->
     <div class="centre">
-    <a href="#Projets" style="text-decoration:none">
-    <button class="bouton">Commencer</button>
-    </a>
-  </div> 
+      <a href="#Projets" class="no-underline-link">
+        <button class="bouton">Commencer</button>
+      </a>
+    </div> 
 
 </section>
 
@@ -237,4 +241,9 @@
 <div id="lightbox" onclick="fermerImage()">
   <img id="imageGrande">
 </div>
+<!-- Bouton projet suivant -->
+<button id="project-next" aria-label="Projet suivant">❯</button>
+<!-- Bouton haut de page -->
+<button id="back-to-top" class="show" aria-label="Remonter en haut">↑</button>
+</body>
 </html>

@@ -375,6 +375,7 @@ if (project && titleEl && descEl && galleryContainer) {
 const isZoomProjetDeux = window.location.pathname.includes("zoomprojdeux.html");
 
 const numeriqueProjectOrder = [
+  "femmes",
   "laureat",
   "entreplomos",
   "mht",
@@ -396,6 +397,40 @@ const designProjectOrder = [
   "miraflores",
   "villenantes"
 ];
+
+
+/* =========================
+   PROJECT NEXT & BACK-TO-TOP (attach after DOM ready)
+========================= */
+document.addEventListener('DOMContentLoaded', () => {
+  const projectNextBtn = document.getElementById('project-next');
+  if (projectNextBtn) {
+    projectNextBtn.addEventListener('click', () => {
+      const sections = Array.from(document.querySelectorAll('section#Projets'));
+      if (sections.length === 0) return;
+
+      const currentScroll = window.scrollY || window.pageYOffset;
+      let target = sections.find(s => (s.getBoundingClientRect().top + window.scrollY) > currentScroll + 10);
+      if (!target) target = sections[0];
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
+
+  const backToTopBtn = document.getElementById('back-to-top');
+  function toggleBackToTop() {
+    if (!backToTopBtn) return;
+    if (window.scrollY > 300) backToTopBtn.classList.add('show');
+    else backToTopBtn.classList.remove('show');
+  }
+
+  window.addEventListener('scroll', toggleBackToTop);
+
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});
 
 const zoomDeuxDesignProjectOrder = ["museeor"];
 
