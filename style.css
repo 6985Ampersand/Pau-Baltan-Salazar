@@ -1295,7 +1295,7 @@ a:hover {
 
   .hero-title {
     font-size: clamp(36px, 8vw, 60px);
-    line-height: 1.05;
+    line-height: 0.005em;
   }
 
   .hero-image img {
