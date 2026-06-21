@@ -372,6 +372,21 @@ if (project && titleEl && descEl && galleryContainer) {
 /* =========================
    NAVIGATION PROJETS
 ========================= */
+  // Attach handlers to any static images with class 'galerie' (ex: index page)
+  // This ensures clicking thumbnails outside project pages opens the lightbox.
+  const staticGalerieImgs = Array.from(document.querySelectorAll("img.galerie"));
+  if (staticGalerieImgs.length > 0) {
+    staticGalerieImgs.forEach((img) => {
+      if (!img.dataset.galerieBound) {
+        img.addEventListener("click", () => {
+          galleryImages = Array.from(document.querySelectorAll("img.galerie"));
+          const index = galleryImages.indexOf(img);
+          ouvrirLightbox(index);
+        });
+        img.dataset.galerieBound = "true";
+      }
+    });
+  }
 const isZoomProjetDeux = window.location.pathname.includes("zoomprojdeux.html");
 
 const numeriqueProjectOrder = [
