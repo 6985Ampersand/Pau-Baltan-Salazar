@@ -31,9 +31,149 @@ const prevLightbox = document.querySelector(".prev");
 let galleryImages = [];
 let currentGalleryIndex = -1;
 
+// Zoom variables
+let currentZoom = 1;
+const MIN_ZOOM = 1;
+const MAX_ZOOM = 4;
+const ZOOM_STEP = 0.2;
+let zoomContainer = null;
+let isPanning = false;
+let panStartX = 0;
+let panStartY = 0;
+
+// Initialize zoom container and controls
+function initZoomControls() {
+  if (zoomContainer) return;
+  
+  // Create container for image
+  zoomContainer = document.createElement("div");
+  zoomContainer.id = "lightbox-image-container";
+  
+  // Wrap existing image
+  if (imageGrande.parentNode.id !== "lightbox-image-container") {
+    imageGrande.parentNode.insertBefore(zoomContainer, imageGrande);
+    zoomContainer.appendChild(imageGrande);
+  }
+  
+  // Create zoom controls
+  let zoomControls = document.querySelector(".zoom-controls");
+  if (!zoomControls) {
+    zoomControls = document.createElement("div");
+    zoomControls.className = "zoom-controls";
+    
+    const btnMinus = document.createElement("button");
+    btnMinus.className = "zoom-btn";
+    btnMinus.textContent = "−";
+    btnMinus.addEventListener("click", () => zoomOut());
+    
+    const btnPlus = document.createElement("button");
+    btnPlus.className = "zoom-btn";
+    btnPlus.textContent = "+";
+    btnPlus.addEventListener("click", () => zoomIn());
+    
+    zoomControls.appendChild(btnMinus);
+    zoomControls.appendChild(btnPlus);
+    lightbox.appendChild(zoomControls);
+  }
+  
+  // Create zoom level display
+  let zoomLevel = document.querySelector(".zoom-level");
+  if (!zoomLevel) {
+    zoomLevel = document.createElement("div");
+    zoomLevel.className = "zoom-level";
+    zoomLevel.id = "zoom-level-display";
+    lightbox.appendChild(zoomLevel);
+  }
+  
+  // Setup image event listeners
+  setupImagePanning();
+}
+
+function zoomIn() {
+  if (currentZoom < MAX_ZOOM) {
+    currentZoom = Math.min(currentZoom + ZOOM_STEP, MAX_ZOOM);
+    applyZoom();
+  }
+}
+
+function zoomOut() {
+  if (currentZoom > MIN_ZOOM) {
+    currentZoom = Math.max(currentZoom - ZOOM_STEP, MIN_ZOOM);
+    applyZoom();
+  }
+}
+
+function applyZoom() {
+  imageGrande.style.transform = `scale(${currentZoom})`;
+  updateZoomDisplay();
+}
+
+function updateZoomDisplay() {
+  const display = document.getElementById("zoom-level-display");
+  if (display) {
+    display.textContent = `${Math.round(currentZoom * 100)}%`;
+  }
+}
+
+function resetZoom() {
+  currentZoom = 1;
+  applyZoom();
+}
+
+function setupImagePanning() {
+  imageGrande.addEventListener("mousedown", (e) => {
+    if (currentZoom > 1) {
+      isPanning = true;
+      panStartX = e.clientX - imageGrande.offsetLeft;
+      panStartY = e.clientY - imageGrande.offsetTop;
+      imageGrande.style.cursor = "grabbing";
+    }
+  });
+  
+  imageGrande.addEventListener("mousemove", (e) => {
+    if (isPanning && currentZoom > 1) {
+      const container = zoomContainer;
+      const x = (e.clientX - panStartX);
+      const y = (e.clientY - panStartY);
+      container.scrollLeft = -x;
+      container.scrollTop = -y;
+    }
+  });
+  
+  imageGrande.addEventListener("mouseup", () => {
+    isPanning = false;
+    imageGrande.style.cursor = "grab";
+  });
+  
+  imageGrande.addEventListener("mouseleave", () => {
+    isPanning = false;
+    imageGrande.style.cursor = "grab";
+  });
+  
+  // Zoom with mouse wheel
+  if (zoomContainer) {
+    zoomContainer.addEventListener("wheel", (e) => {
+      e.preventDefault();
+      if (e.deltaY < 0) {
+        zoomIn();
+      } else {
+        zoomOut();
+      }
+    }, { passive: false });
+  }
+  
+  // Double-click to reset zoom
+  imageGrande.addEventListener("dblclick", () => {
+    resetZoom();
+  });
+}
+
 function ouvrirLightbox(index) {
   if (!lightbox || !imageGrande || galleryImages.length === 0) return;
 
+  resetZoom();
+  initZoomControls();
+  
   currentGalleryIndex = index;
   imageGrande.src = galleryImages[currentGalleryIndex].src;
   lightbox.style.display = "flex";
@@ -41,17 +181,33 @@ function ouvrirLightbox(index) {
 
 function fermerLightbox() {
   if (!lightbox) return;
+  resetZoom();
   lightbox.style.display = "none";
 }
 
 function defilerLightbox(direction) {
   if (galleryImages.length === 0) return;
 
+  resetZoom();
   currentGalleryIndex =
     (currentGalleryIndex + direction + galleryImages.length) %
     galleryImages.length;
 
   imageGrande.src = galleryImages[currentGalleryIndex].src;
+}
+
+// Load project images into lightbox from projects object
+function chargerProjetDansLightbox(projectKey) {
+  if (!projects[projectKey]) return;
+  
+  galleryImages = projects[projectKey].gallery.map(src => ({
+    src: src
+  }));
+  
+  if (galleryImages.length > 0) {
+    currentGalleryIndex = 0;
+    ouvrirLightbox(0);
+  }
 }
 
 // événements lightbox
@@ -367,6 +523,24 @@ if (project && titleEl && descEl && galleryContainer) {
     });
   }
 }
+
+
+// Attach handlers to project thumbnail images in design.html & numerique.html
+// When clicking a project image, load full gallery into lightbox
+const designProjectClasses = Object.keys(projects);
+designProjectClasses.forEach((projectKey) => {
+  const projectImgs = document.querySelectorAll(`div.${projectKey} img, img.${projectKey}`);
+  projectImgs.forEach((img) => {
+    img.style.cursor = "pointer";
+    img.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (projects[projectKey]) {
+        chargerProjetDansLightbox(projectKey);
+      }
+    });
+  });
+});
 
 
 /* =========================
